@@ -1,0 +1,33 @@
+.basicBack {
+	position: absolute;
+	width: 95%;
+	height: auto;
+	left: 2%;
+	top: 5%;
+	background-color: rgba(80, 80, 80, 0.719);
+}
+
+.basicBackFlexCover {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 50px;
+	margin-bottom: 70px;
+	width: 98%;
+	height: 98%;
+	left: 1%;
+	top: 1%;
+}
+
+@media only screen and (min-width: 600px) {
+	.basicBack {
+		width: 70%;
+		left: 15%;
+		top: 15%;
+	}
+	.basicBackFlexCover {
+		width: 90%;
+		height: 90%;
+		top: 5%;
+	}
+}
