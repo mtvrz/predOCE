@@ -34,7 +34,11 @@
 	text-align: center;
 	padding-top: 15%;
 }
-
+.icon {
+	left: ;
+	width: 100%;
+	height: auto;
+}
 @media only screen and (min-width: 600px) {
 	.itemContainer {
 		margin: 20px;
@@ -50,9 +54,9 @@
 	}
 	.itemShowImage {
 		width: 60%;
-		height: 60%;
+		height: 80%;
 		left: 20%;
-		top: 20%;
+		top: 5%;
 	}
 	.itemHeader {
 		width: 90%;

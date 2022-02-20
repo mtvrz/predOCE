@@ -1,6 +1,6 @@
-import './BasicScreenContainer.css';
-import DashItem from '../Dashboard/DashItem';
-import Card from './Card';
+import './DashboardScreenContainer.css';
+import DashItem from './DashItem';
+import Card from '../UI/Card';
 
 const BasicScreenContainer = () => {
 	return (
