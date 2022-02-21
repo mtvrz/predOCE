@@ -6,10 +6,8 @@ const BasicScreenContainer = () => {
 	return (
 		<Card className="basicBack">
 			<div className="basicBackFlexCover">
-				<DashItem title="Název 1"></DashItem>
-				<DashItem title="Název 2"></DashItem>
-				<DashItem title="Název 3"></DashItem>
-				<DashItem title="Název 4"></DashItem>
+				<DashItem icon="predoceneni" title="Předběžné ocenění"></DashItem>
+				<DashItem icon="AUW" title="AUW"></DashItem>
 			</div>
 		</Card>
 	);

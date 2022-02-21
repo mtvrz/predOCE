@@ -1,4 +1,4 @@
-.basicBack {
+.basicBackPr {
 	position: absolute;
 	width: 95%;
 	height: auto;
@@ -7,7 +7,7 @@
 	background-color: rgba(80, 80, 80, 0.719);
 }
 
-.basicBackFlexCover {
+.basicBackFlexCoverPr {
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
@@ -19,23 +19,23 @@
 	left: 1%;
 	top: 1%;
 }
-.headNameShow {
+.headNameShowPr {
 	font-family: monospace;
 	text-align: center;
 	margin-bottom: 20px;
 }
 @media only screen and (min-width: 600px) {
-	.basicBack {
+	.basicBackPr {
 		width: 80%;
 		left: 10%;
 		top: 15%;
 	}
-	.basicBackFlexCover {
+	.basicBackFlexCoverPr {
 		width: 90%;
 		height: 90%;
 		top: 5%;
 	}
-	.headNameShow {
+	.headNameShowPr {
 		margin-top: 90px;
 	}
 }

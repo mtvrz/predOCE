@@ -4,9 +4,9 @@ import Card from '../UI/Card';
 const PredOCEBackContainer = () => {
 	return (
 		<div>
-			<h2 className="headNameShow">Proces předocenění v2</h2>
-			<Card className="basicBack">
-				<div className="basicBackFlexCover"></div>
+			<h2 className="headNameShowPr">Proces předocenění v2</h2>
+			<Card className="basicBackPr">
+				<div className="basicBackFlexCoverPr"></div>
 			</Card>
 		</div>
 	);

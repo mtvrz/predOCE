@@ -21,7 +21,7 @@
 	left: 20%;
 	top: 20%;
 	border-style: dashed;
-	border-color: gray;
+	border-color: rgba(128, 128, 128, 0.185);
 	border-radius: 0.2em;
 }
 .itemHeader {
@@ -35,7 +35,6 @@
 	padding-top: 15%;
 }
 .icon {
-	left: ;
 	width: 100%;
 	height: auto;
 }
