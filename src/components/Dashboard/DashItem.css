@@ -1,11 +1,16 @@
 .itemContainer {
 	position: relative;
+	cursor: pointer;
 	margin: 20px;
 	width: 80%;
 	height: 300px;
 	left: 5%;
-	top: 10%;
 	background-color: rgba(156, 156, 156, 0.295);
+	transition: 0.2s;
+}
+.itemContainer:hover {
+	background-color: rgba(211, 207, 207, 0.753);
+	transform: scale(1.1);
 }
 .itemView {
 	position: relative;
@@ -21,7 +26,7 @@
 	left: 20%;
 	top: 20%;
 	border-style: dashed;
-	border-color: rgba(128, 128, 128, 0.185);
+	border-color: rgba(128, 128, 128, 0.055);
 	border-radius: 0.2em;
 }
 .itemHeader {
@@ -33,10 +38,12 @@
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: x-large;
 	text-align: center;
-	padding-top: 15%;
+	padding-top: 18%;
 }
 .icon {
-	width: 100%;
+	position: relative;
+	left: 25%;
+	width: 50%;
 	height: auto;
 }
 @media only screen and (min-width: 600px) {
@@ -44,7 +51,6 @@
 		margin: 20px;
 		width: 20%;
 		height: 300px;
-		top: 20%;
 	}
 	.itemView {
 		width: 90%;
@@ -62,5 +68,10 @@
 		width: 90%;
 		height: 35%;
 		left: 5%;
+	}
+	.icon {
+		left: 0%;
+		width: 100%;
+		height: auto;
 	}
 }
