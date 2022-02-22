@@ -22,6 +22,7 @@ const PredOCEForm = () => {
 					</div>
 					<div className="inputContainer">
 						<select className="textboxShow" name="scenario" id="scenario">
+							<option value="null"></option>
 							<option value="OK">Předocenění - OK </option>
 							<option value="OKv">Předocenění - OK s výlukou </option>
 							<option value="NOK2">Předocenění - NOK 2 </option>

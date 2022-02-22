@@ -3,6 +3,7 @@
 	height: 30px;
 	position: fixed;
 	left: 88%;
+	transition: 0.2s;
 }
 .pic {
 	width: 100%;

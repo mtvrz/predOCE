@@ -1,9 +1,15 @@
 .basicBackPr {
-	position: absolute;
+	position: relative;
 	width: 95%;
 	height: auto;
 	left: 2%;
 	top: 5%;
+	transition: 0.2s;
+}
+.light {
+	background-color: rgba(173, 173, 173, 0.719);
+}
+.dark {
 	background-color: rgba(80, 80, 80, 0.719);
 }
 
@@ -33,9 +39,14 @@
 	.basicBackFlexCoverPr {
 		width: 90%;
 		height: 90%;
+		left: 5%;
 		top: 5%;
 	}
 	.headNameShowPr {
 		margin-top: 90px;
 	}
+}
+
+.hide {
+	display: none;
 }

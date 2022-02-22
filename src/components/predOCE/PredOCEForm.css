@@ -4,6 +4,7 @@
 	width: 33%;
 	font-size: 20px;
 	font-family: monospace;
+	transition: 0.2s;
 }
 .inputContainer {
 	width: 33%;
@@ -11,13 +12,15 @@
 
 .textboxShow {
 	width: 80%;
-	margin-top: 20px;
+	height: 40px;
+	margin-top: 10px;
 	margin-bottom: 10px;
-	font-size: 30px;
+	font-size: 20px;
 	border-radius: 0.2em;
 	font-family: monospace;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 	border: none;
+	transition: 0.2s;
 }
 .flex {
 	display: flex;
@@ -34,14 +37,15 @@
 	position: relative;
 	width: 50%;
 	margin-top: 50px;
-	left: 45%;
+	margin-bottom: 20px;
+	left: 40%;
 }
 .line {
 	position: relative;
 	top: 20px;
 	width: 100%;
 	height: 2px;
-	background-color: black;
+	background-color: rgb(105, 105, 105);
 }
 .btsubmit {
 	width: 20%;
@@ -56,5 +60,5 @@
 }
 .btsubmit:hover {
 	cursor: pointer;
-	background-color: rgba(207, 112, 57, 0.603);
+	background-color: rgba(207, 207, 207, 0.603);
 }
