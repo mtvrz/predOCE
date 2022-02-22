@@ -5,4 +5,51 @@
 	border-radius: 0.5em;
 	margin-bottom: 10px;
 	background-color: rgba(252, 252, 252, 0.603);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.risk-flex {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.risk-item-container {
+	position: relative;
+	height: 90px;
+	border-right: 2px;
+	font-size: 20px;
+	font-family: monospace;
+	transition: 0.2s;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.risk-item-size-one {
+	flex-grow: 1;
+}
+
+.risk-item-size-two {
+	flex-grow: 2;
+}
+.risk-item-size-three {
+	flex-grow: 3;
+}
+
+.risk-item-position {
+	text-align: center;
+	padding-top: 32px;
+}
+.risk-item-position-txt {
+	text-align: center;
+	padding-top: 25px;
+}
+
+.risk-textbox {
+	width: 60%;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 0.2em;
+	font-family: monospace;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	border: none;
+	transition: 0.2s;
 }

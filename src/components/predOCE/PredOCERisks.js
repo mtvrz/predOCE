@@ -9,8 +9,6 @@ const PredOCERisks = () => {
 			<div className="middle-cont-risks">
 				<Risk />
 				<Risk />
-				<Risk />
-				<Risk />
 			</div>
 			<div className="line-cont-risks"></div>
 			<div className="bottom-cont-risks">
