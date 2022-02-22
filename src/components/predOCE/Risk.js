@@ -13,7 +13,7 @@ const Risk = () => {
 				<div className="risk-item-container risk-item-size-one risk-item-position">bb</div>
 				<div className="risk-item-container risk-item-size-three risk-item-position">bb</div>
 				<div className="risk-item-container risk-item-size-one risk-item-position-txt">
-					<input className="risk-textbox" type="text" id="fdate" name="fdate" />
+					<input className="risk-textbox" type="text" id="frisk-change-val" name="frisk-change-val" />
 				</div>
 				<div className="risk-item-container risk-item-size-two risk-item-position">bb</div>
 			</div>
