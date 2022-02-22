@@ -4,7 +4,6 @@
 	margin: 20px;
 	width: 80%;
 	height: 300px;
-	left: 5%;
 	background-color: rgba(156, 156, 156, 0.295);
 	transition: 0.2s;
 }
@@ -47,6 +46,36 @@
 	height: auto;
 }
 @media only screen and (min-width: 600px) {
+	.itemContainer {
+		left: 5%;
+		margin: 20px;
+		width: 40%;
+		height: 300px;
+	}
+	.itemView {
+		width: 90%;
+		height: 55%;
+		top: 10%;
+		left: 5%;
+	}
+	.itemShowImage {
+		width: 60%;
+		height: 80%;
+		left: 20%;
+		top: 5%;
+	}
+	.itemHeader {
+		width: 90%;
+		height: 35%;
+		left: 5%;
+	}
+	.icon {
+		left: 0%;
+		width: 100%;
+		height: auto;
+	}
+}
+@media only screen and (min-width: 1000px) {
 	.itemContainer {
 		margin: 20px;
 		width: 20%;

@@ -3,20 +3,11 @@ import Dashboard from './components/Dashboard/Dashboard';
 import PredOCE from './components/predOCE/PredOCE';
 
 const App = () => {
-	let x = 1;
+	let x = 2;
 
 	if (x === 1) {
-		return (
-			<div className="">
-				<Dashboard></Dashboard>
-			</div>
-		);
-	} else
-		return (
-			<div className="">
-				<PredOCE></PredOCE>
-			</div>
-		);
+		return <Dashboard />;
+	} else return <PredOCE />;
 };
 
 export default App;

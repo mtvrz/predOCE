@@ -1,12 +1,16 @@
 import './PredOCEBackContainer.css';
 //import DashItem from '../Dashboard/DashItem';
 import Card from '../UI/Card';
+import PredOCEForm from './predOCEForm';
 const PredOCEBackContainer = () => {
+	const title = 'v2';
 	return (
 		<div>
-			<h2 className="headNameShowPr">Proces předocenění v2</h2>
+			<h2 className="headNameShowPr">{title}</h2>
 			<Card className="basicBackPr">
-				<div className="basicBackFlexCoverPr"></div>
+				<div className="basicBackFlexCoverPr">
+					<PredOCEForm />
+				</div>
 			</Card>
 		</div>
 	);
