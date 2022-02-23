@@ -7,7 +7,6 @@
 	background-color: rgba(252, 252, 252, 0.603);
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
-
 .risk-flex {
 	display: flex;
 	flex-wrap: nowrap;
@@ -23,15 +22,17 @@
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.risk-item-size-one {
-	flex-grow: 1;
+.risk-five-per {
+	width: 5%;
 }
-
-.risk-item-size-two {
-	flex-grow: 2;
+.risk-ten-per {
+	width: 10%;
 }
-.risk-item-size-three {
-	flex-grow: 3;
+.risk-fift-per {
+	width: 15%;
+}
+.risk-twen-per {
+	width: 20%;
 }
 
 .risk-item-position {
@@ -44,12 +45,30 @@
 }
 
 .risk-textbox {
-	width: 60%;
+	width: 80%;
 	height: 40px;
-	font-size: 20px;
+	font-size: 15px;
 	border-radius: 0.2em;
 	font-family: monospace;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 	border: none;
 	transition: 0.2s;
+}
+.btconfirm {
+	width: 60%;
+	height: 40px;
+	border-radius: 0.3em;
+	border: none;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	font-family: monospace;
+	font-size: x-large;
+	transition: 0.2s;
+}
+.btconfirm:hover {
+	cursor: pointer;
+	background-color: rgba(221, 49, 26, 0.603);
+}
+.btconfirm:disabled:hover {
+	cursor: auto;
+	background-color: rgba(207, 207, 207, 0.281);
 }
