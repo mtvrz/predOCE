@@ -3,7 +3,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import PredOCE from './components/predOCE/PredOCE';
 
 const App = () => {
-	let x = 2;
+	let x = 1;
 
 	if (x === 1) {
 		return <Dashboard />;
