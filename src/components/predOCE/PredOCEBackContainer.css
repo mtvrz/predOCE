@@ -1,0 +1,52 @@
+.basicBackPr {
+	position: relative;
+	width: 95%;
+	height: auto;
+	left: 2%;
+	top: 5%;
+	transition: 0.2s;
+}
+.light {
+	background-color: rgba(173, 173, 173, 0.719);
+}
+.dark {
+	background-color: rgba(80, 80, 80, 0.719);
+}
+
+.basicBackFlexCoverPr {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 50px;
+	margin-bottom: 70px;
+	width: 98%;
+	height: 98%;
+	left: 1%;
+	top: 1%;
+}
+.headNameShowPr {
+	font-family: monospace;
+	text-align: center;
+	margin-bottom: 20px;
+}
+@media only screen and (min-width: 600px) {
+	.basicBackPr {
+		width: 80%;
+		left: 10%;
+		top: 15%;
+	}
+	.basicBackFlexCoverPr {
+		width: 90%;
+		height: 90%;
+		left: 5%;
+		top: 5%;
+	}
+	.headNameShowPr {
+		margin-top: 90px;
+	}
+}
+
+.hide {
+	display: none;
+}
