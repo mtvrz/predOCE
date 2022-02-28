@@ -5,6 +5,7 @@ const PredOCERisks = (props) => {
 	const personName = 'Test Testovací';
 	const riskField = [
 		{
+			ID: 1,
 			riziko: 'Z5P',
 			typRizika: 'ZP',
 			pc: '20000.0',
@@ -12,6 +13,7 @@ const PredOCERisks = (props) => {
 			prirazka: '50',
 		},
 		{
+			ID: 2,
 			riziko: 'ID3N',
 			typRizika: 'ZP',
 			pc: '2000000.0',
@@ -19,6 +21,7 @@ const PredOCERisks = (props) => {
 			prirazka: '300',
 		},
 		{
+			ID: 3,
 			riziko: 'DON29Z',
 			typRizika: 'ZDP',
 			pc: '300.0',
@@ -34,7 +37,7 @@ const PredOCERisks = (props) => {
 			<div className="line-cont-risks"></div>
 			<div className="middle-cont-risks">
 				{riskField.map((x) => [
-					<Risk riziko={x.riziko} typrizika={x.typRizika} pc={x.pc} uvek={x.uvek} prirazka={x.prirazka} />,
+					<Risk key={x.ID} riziko={x.riziko} typrizika={x.typRizika} pc={x.pc} uvek={x.uvek} prirazka={x.prirazka} />,
 				])}
 			</div>
 			<div className="line-cont-risks"></div>
