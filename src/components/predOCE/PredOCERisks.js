@@ -43,7 +43,9 @@ const PredOCERisks = (props) => {
 			<div className="line-cont-risks"></div>
 			<div className="bottom-cont-risks">
 				<button className="bt flright">Save</button>
-				<button className="bt flright">Discard</button>
+				<button className="bt flright" onClick={props.onShowForm}>
+					Discard
+				</button>
 			</div>
 		</div>
 	);

@@ -9,6 +9,7 @@ const Risk = (props) => {
 	const prirazka = props.prirazka;
 
 	const [isSelectDisabled, setIsSelectDisabled] = useState(false);
+	const [isBtDisabled, setIsBtDisabled] = useState(false);
 	const [isTXTDisabled, setIsTXTDisabled] = useState(true);
 	const [selectChange, setSelectChange] = useState('null');
 	const [txtValue, setTXTValue] = useState('');
@@ -31,6 +32,7 @@ const Risk = (props) => {
 		console.log(obj);
 		setIsSelectDisabled(true);
 		setIsTXTDisabled(true);
+		setIsBtDisabled(true);
 	};
 
 	return (
@@ -70,7 +72,7 @@ const Risk = (props) => {
 					/>
 				</div>
 				<div className="risk-item-container risk-fift-per risk-item-position-txt">
-					<button className="btconfirm" onClick={returnState}>
+					<button className="btconfirm" onClick={returnState} disabled={isBtDisabled}>
 						Confirm
 					</button>
 				</div>
