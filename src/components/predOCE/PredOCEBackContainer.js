@@ -21,12 +21,12 @@ const PredOCEBackContainer = () => {
 	return (
 		<div>
 			<h2 className="headNameShowPr">{title}</h2>
-			<Card className={'basicBackPr light ' + isFormHidden}>
+			<Card className={'basicBackPr light dark ' + isFormHidden}>
 				<div className="basicBackFlexCoverPr">
 					<PredOCEForm onShowRisk={getRiskTab} />
 				</div>
 			</Card>
-			<Card className={'basicBackPr light ' + isRiskHidden}>
+			<Card className={'basicBackPr light dark ' + isRiskHidden}>
 				<div className="basicBackFlexCoverPr">
 					<PredOCERisks onShowForm={getFormTab} />
 				</div>

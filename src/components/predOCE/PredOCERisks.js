@@ -1,8 +1,11 @@
+import react, { useState } from 'react';
 import './PredOCERisks.css';
 import Risk from './Risk';
 
 const PredOCERisks = (props) => {
 	const personName = 'Test Testovací';
+
+	const [FINAL_SCRIPTS_ARRAY, get_FINAL_SCRIPTS_ARRAY] = useState('');
 	const riskField = [
 		{
 			ID: 1,
@@ -29,6 +32,12 @@ const PredOCERisks = (props) => {
 			prirazka: '0',
 		},
 	];
+	const ReturnScript = (script) => {
+		get_FINAL_SCRIPTS_ARRAY(FINAL_SCRIPTS_ARRAY + script);
+	};
+	const ShowScript = () => {
+		console.log(FINAL_SCRIPTS_ARRAY);
+	};
 	return (
 		<div className="mainContainerRisk">
 			<div className="top-cont-risks">
@@ -37,12 +46,22 @@ const PredOCERisks = (props) => {
 			<div className="line-cont-risks"></div>
 			<div className="middle-cont-risks">
 				{riskField.map((x) => [
-					<Risk key={x.ID} riziko={x.riziko} typrizika={x.typRizika} pc={x.pc} uvek={x.uvek} prirazka={x.prirazka} />,
+					<Risk
+						key={x.ID}
+						riziko={x.riziko}
+						typrizika={x.typRizika}
+						pc={x.pc}
+						uvek={x.uvek}
+						prirazka={x.prirazka}
+						risk_script_add={ReturnScript}
+					/>,
 				])}
 			</div>
 			<div className="line-cont-risks"></div>
 			<div className="bottom-cont-risks">
-				<button className="bt flright">Save</button>
+				<button className="bt flright" onClick={ShowScript}>
+					Save
+				</button>
 				<button className="bt flright" onClick={props.onShowForm}>
 					Discard
 				</button>

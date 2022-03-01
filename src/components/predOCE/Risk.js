@@ -24,17 +24,16 @@ const Risk = (props) => {
 		setTXTValue(event.target.value);
 	};
 	const returnState = () => {
-		const obj = {
-			riziko: { riziko },
-			select: { selectChange },
-			ChangeValue: { txtValue },
-		};
-		console.log(obj);
+		const script = TRANSFORM_TO_SCRIPT();
 		setIsSelectDisabled(true);
 		setIsTXTDisabled(true);
 		setIsBtDisabled(true);
-	};
 
+		props.risk_script_add(script);
+	};
+	const TRANSFORM_TO_SCRIPT = () => {
+		return '<' + riziko + '>';
+	};
 	return (
 		<div className="risk-container-main">
 			<div className="risk-flex">
