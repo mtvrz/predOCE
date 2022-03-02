@@ -7,7 +7,7 @@ const Risk = (props) => {
 	const pc = props.pc;
 	const uvek = props.uvek;
 	const prirazka = props.prirazka;
-
+	const typplneni = props.typplneni;
 	const [isSelectDisabled, setIsSelectDisabled] = useState(false);
 	const [isBtDisabled, setIsBtDisabled] = useState(false);
 	const [isTXTDisabled, setIsTXTDisabled] = useState(true);
@@ -32,7 +32,41 @@ const Risk = (props) => {
 		props.risk_script_add(script);
 	};
 	const TRANSFORM_TO_SCRIPT = () => {
-		return '<' + riziko + '>';
+		let riskScript_by_SELECT;
+		const risk =
+			'<Riziko><TypRizika>' +
+			typrizika +
+			'</TypRizika><VerzeRizika>' +
+			riziko +
+			'</VerzeRizika><TypPlneni>' +
+			pc +
+			'</TypPlneni>';
+
+		switch (selectChange) {
+			case 'VyA': {
+				riskScript_by_SELECT = '<Vyluka>1</Vyluka><VylukaDiagnozy/>';
+				break;
+			}
+			case 'VyC': {
+				riskScript_by_SELECT =
+					'<Vyluka>2</Vyluka><VylukaDiagnozy><VylukaDiagnoza><Nazev>úrazy pánevních kostí</Nazev></VylukaDiagnoza></VylukaDiagnozy>';
+				break;
+			}
+			case 'Pri': {
+				riskScript_by_SELECT = '<VylukaDiagnozy/><Prirazka>' + txtValue + '</Prirazka>';
+				break;
+			}
+			case 'UpV': {
+				riskScript_by_SELECT = '<VylukaDiagnozy/><O_VEK_UPR>' + txtValue + '</O_VEK_UPR>';
+				break;
+			}
+			case 'UpC': {
+				riskScript_by_SELECT = '<VylukaDiagnozy/><PC_UPR>' + txtValue + '</PC_UPR>';
+				break;
+			}
+		}
+
+		return risk + riskScript_by_SELECT + '</Riziko>\n';
 	};
 	return (
 		<div className="risk-container-main">
