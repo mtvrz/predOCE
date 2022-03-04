@@ -40,6 +40,7 @@ const PredOCERisks = (props) => {
 	};
 	const ShowScript = () => {
 		console.log(FINAL_SCRIPTS_ARRAY);
+		props.onShowScript();
 	};
 	return (
 		<div className="mainContainerRisk">
@@ -63,10 +64,10 @@ const PredOCERisks = (props) => {
 			<div className="line-cont-risks"></div>
 			<div className="bottom-cont-risks">
 				<button className="bt flright" onClick={ShowScript}>
-					Save
+					Generovat script
 				</button>
 				<button className="bt flright" onClick={props.onShowForm}>
-					Discard
+					Zpět
 				</button>
 			</div>
 		</div>

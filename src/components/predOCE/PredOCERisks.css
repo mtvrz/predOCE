@@ -30,7 +30,8 @@
 	height: 60px;
 }
 .bt {
-	width: 10%;
+	width: auto;
+	padding: 10px;
 	height: 60px;
 	border-radius: 0.3em;
 	border: none;

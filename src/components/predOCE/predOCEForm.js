@@ -20,7 +20,7 @@ const PredOCEForm = (props) => {
 					Request_DATE:
 				</label>
 				<label className="textName" for="fscenario">
-					Scenario
+					Scénář
 				</label>
 				<div className="inputContainer">
 					<input className="textboxShow" type="text" id="fdata" name="fdata" />
@@ -44,7 +44,7 @@ const PredOCEForm = (props) => {
 			<div className="line"></div>
 			<div className="btcontainer">
 				<button className="btsubmit" onClick={SubmitButtonClickEvent}>
-					Submit
+					Potvrdit
 				</button>
 			</div>
 		</div>
