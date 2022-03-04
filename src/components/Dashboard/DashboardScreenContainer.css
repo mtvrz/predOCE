@@ -4,10 +4,15 @@
 	height: auto;
 	left: 2%;
 	top: 5%;
-	background-color: rgba(80, 80, 80, 0.719);
 	transition: 0.3s;
 }
 
+.light {
+	background-color: rgba(173, 173, 173, 0.719);
+}
+.dark {
+	background-color: rgba(80, 80, 80, 0.719);
+}
 .basicBackFlexCover {
 	position: relative;
 	display: flex;

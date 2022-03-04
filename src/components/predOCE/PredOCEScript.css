@@ -1,16 +1,4 @@
-.textName {
-	position: relative;
-	margin-top: 40px;
-	width: 33%;
-	font-size: 20px;
-	font-family: monospace;
-	transition: 0.2s;
-}
-.inputContainer {
-	width: 33%;
-}
-
-.textboxShow {
+.Scripttextbox {
 	width: 80%;
 	height: 40px;
 	margin-top: 10px;
@@ -22,44 +10,45 @@
 	border: none;
 	transition: 0.2s;
 }
-.flex {
+.Scriptflex {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 }
-.container {
+.containerScript {
 	position: relative;
 	width: 100%;
 	left: 4%;
 }
-
-.btcontainer {
-	position: relative;
-	width: 50%;
-	margin-top: 50px;
-	margin-bottom: 20px;
-	left: 40%;
-}
-.line {
+.line-cont-script {
 	position: relative;
 	top: 20px;
 	width: 100%;
 	height: 2px;
 	background-color: rgb(105, 105, 105);
 }
-.btsubmit {
-	width: 20%;
+.bottom-cont-script {
+	margin-top: 20px;
+	position: relative;
+	width: 100%;
+	transition: 0.2s;
 	height: 60px;
+}
+.btScriptsubmit {
+	width: auto;
+	height: 40px;
 	left: 40%;
-	padding: 10px;
+	float: right;
 	border-radius: 0.3em;
 	border: none;
+	margin: 10px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 	font-family: monospace;
 	font-size: x-large;
 	transition: 0.2s;
 }
-.btsubmit:hover {
+.btScriptsubmit:hover {
 	cursor: pointer;
-	background-color: rgba(207, 207, 207, 0.603);
+	background-color: rgba(211, 133, 16, 0.993);
 }
