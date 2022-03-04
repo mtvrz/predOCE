@@ -3,7 +3,7 @@ import './PredOCERisks.css';
 import Risk from './Risk';
 
 const PredOCERisks = (props) => {
-	const personName = 'Test Testovací';
+	const personName = props.PersonName;
 
 	const [FINAL_SCRIPTS_ARRAY, get_FINAL_SCRIPTS_ARRAY] = useState('');
 	const riskField = [

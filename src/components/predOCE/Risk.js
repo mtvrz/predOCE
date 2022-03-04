@@ -78,7 +78,7 @@ const Risk = (props) => {
 				<div className="risk-item-container risk-ten-per risk-item-position">{prirazka} %</div>
 				<div className="risk-item-container risk-twen-per risk-item-position-txt ">
 					<select
-						className="risk-textbox "
+						className="risk-textbox"
 						name="scenario"
 						id="scenario"
 						defaultValue={selectChange}

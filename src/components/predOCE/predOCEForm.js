@@ -1,6 +1,15 @@
 import './PredOCEForm.css';
 
 const PredOCEForm = (props) => {
+	let PreevaluatePersonName = '';
+	const PreevaluatePersonNameFill = (event) => {
+		PreevaluatePersonName = event.target.value;
+	};
+	const SubmitButtonClickEvent = () => {
+		props.getName(PreevaluatePersonName);
+		props.onShowRisk();
+	};
+
 	return (
 		<div className="container">
 			<div className="flex">
@@ -28,10 +37,13 @@ const PredOCEForm = (props) => {
 						<option value="NOK8">Předocenění - NOK 8 </option>
 					</select>
 				</div>
+				<div className="inputContainer">
+					<input className="textboxShow" type="text" id="fname" name="fname" onChange={PreevaluatePersonNameFill} />
+				</div>
 			</div>
 			<div className="line"></div>
 			<div className="btcontainer">
-				<button className="btsubmit" onClick={props.onShowRisk}>
+				<button className="btsubmit" onClick={SubmitButtonClickEvent}>
 					Submit
 				</button>
 			</div>
