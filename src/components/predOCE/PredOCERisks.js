@@ -66,7 +66,7 @@ const PredOCERisks = (props) => {
 				<button className="bt flright" onClick={ShowScript}>
 					Generovat script
 				</button>
-				<button className="bt flright" onClick={props.onShowForm}>
+				<button className="btback " onClick={props.onShowFrm}>
 					Zpět
 				</button>
 			</div>
