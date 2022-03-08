@@ -12,6 +12,10 @@ const PredOCEBackContainer = () => {
 	const [isRiskHidden, getisRiskHidden] = useState('hide');
 	const [isScriptHidden, getisScriptHidden] = useState('hide');
 	const [NamePreevaluatePerson, getNamePreevaluatePerson] = useState();
+	const [riskField, getriskField] = useState([]);
+	const getRiskArray = (array) => {
+		getriskField(array);
+	};
 	const getRiskTab = () => {
 		getisFormHidden('hide');
 		getisRiskHidden();
@@ -37,12 +41,17 @@ const PredOCEBackContainer = () => {
 			<h2 className="headNameShowPr">{title}</h2>
 			<Card className={'basicBackPr light ' + isFormHidden}>
 				<div className="basicBackFlexCoverPr">
-					<PredOCEForm onShowRisk={getRiskTab} getName={getNamePreevaluatePerson_method} />
+					<PredOCEForm onShowRisk={getRiskTab} getName={getNamePreevaluatePerson_method} getArray={getRiskArray} />
 				</div>
 			</Card>
 			<Card className={'basicBackPr light ' + isRiskHidden}>
 				<div className="basicBackFlexCoverPr">
-					<PredOCERisks PersonName={NamePreevaluatePerson} onShowForm={getFormTab} onShowScript={getScriptTab} />
+					<PredOCERisks
+						PersonName={NamePreevaluatePerson}
+						onShowForm={getFormTab}
+						onShowScript={getScriptTab}
+						Array={riskField}
+					/>
 				</div>
 			</Card>
 			<Card className={'basicBackPr light ' + isScriptHidden}>

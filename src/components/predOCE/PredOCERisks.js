@@ -4,37 +4,9 @@ import Risk from './Risk';
 
 const PredOCERisks = (props) => {
 	const personName = props.PersonName;
-
+	const riskField = props.Array;
 	const [FINAL_SCRIPTS_ARRAY, get_FINAL_SCRIPTS_ARRAY] = useState('');
-	const riskField = [
-		{
-			ID: 1,
-			riziko: 'Z5P',
-			typRizika: 'ZP',
-			typplneni: 'PC',
-			pc: '20000.0',
-			uvek: '71',
-			prirazka: '50',
-		},
-		{
-			ID: 2,
-			riziko: 'ID3N',
-			typRizika: 'ZP',
-			typplneni: 'PC',
-			pc: '2000000.0',
-			uvek: '71',
-			prirazka: '300',
-		},
-		{
-			ID: 3,
-			riziko: 'DON29Z',
-			typRizika: 'ZDP',
-			typplneni: 'PC',
-			pc: '300.0',
-			uvek: '71',
-			prirazka: '0',
-		},
-	];
+
 	const ReturnScript = (script) => {
 		get_FINAL_SCRIPTS_ARRAY(FINAL_SCRIPTS_ARRAY + script);
 	};
@@ -66,7 +38,7 @@ const PredOCERisks = (props) => {
 				<button className="bt flright" onClick={ShowScript}>
 					Generovat script
 				</button>
-				<button className="btback " onClick={props.onShowFrm}>
+				<button className="btback " onClick={props.onShowForm}>
 					Zpět
 				</button>
 			</div>

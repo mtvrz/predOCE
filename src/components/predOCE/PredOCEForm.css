@@ -30,6 +30,9 @@
 .container {
 	position: relative;
 	width: 100%;
+}
+.lft {
+	position: relative;
 	left: 4%;
 }
 
@@ -62,4 +65,10 @@
 .btsubmit:hover {
 	cursor: pointer;
 	background-color: rgba(207, 207, 207, 0.603);
+}
+.infoPar {
+	width: 100%;
+	font-size: smaller;
+	font-weight: bold;
+	margin: 0;
 }
