@@ -32,8 +32,22 @@ const PredOCEBackContainer = () => {
 		getisScriptHidden();
 	};
 
-	const getNamePreevaluatePerson_method = (PreevaluatePersonName) => {
-		getNamePreevaluatePerson(PreevaluatePersonName);
+	const Switcher = (name, actionID, xmlData, time, timePlO) => {
+		getNamePreevaluatePerson(name);
+		switch (actionID) {
+			case '1': {
+				break;
+			}
+			case '2': {
+				break;
+			}
+			case '21': {
+				break;
+			}
+			case '22': {
+				break;
+			}
+		}
 	};
 
 	return (
@@ -41,7 +55,12 @@ const PredOCEBackContainer = () => {
 			<h2 className="headNameShowPr">{title}</h2>
 			<Card className={'basicBackPr light ' + isFormHidden}>
 				<div className="basicBackFlexCoverPr">
-					<PredOCEForm onShowRisk={getRiskTab} getName={getNamePreevaluatePerson_method} getArray={getRiskArray} />
+					<PredOCEForm
+						onTakeAction={Switcher}
+						onShowRisk={getRiskTab}
+						onSpeedShowScript={getScriptTab}
+						getArray={getRiskArray}
+					/>
 				</div>
 			</Card>
 			<Card className={'basicBackPr light ' + isRiskHidden}>

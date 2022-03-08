@@ -27,7 +27,7 @@ const PredOCEForm = (props) => {
 				};
 				x++;
 			} catch (error) {
-				console.error('Přetíženo');
+				console.warn('Přetíženo');
 				i = false;
 			}
 		}
@@ -36,7 +36,6 @@ const PredOCEForm = (props) => {
 	};
 	const EditTimestampPlOne = () => {
 		timestampPlOne = timestamp;
-
 		let min = parseInt(timestamp[14] + timestamp[15]);
 		let hour = parseInt(timestamp[11] + timestamp[12]);
 
@@ -45,7 +44,7 @@ const PredOCEForm = (props) => {
 			min = 0;
 			hour++;
 		}
-		if (hour == 24) {
+		if (hour === 24) {
 			hour = 0;
 		}
 
@@ -55,6 +54,7 @@ const PredOCEForm = (props) => {
 		if (hour < 10) {
 			hour = '0' + hour;
 		}
+		timestampPlOne = timestampPlOne.substr(0, 11) + hour + ':' + min + timestampPlOne.substr(16);
 		console.log(min, hour);
 	};
 	const EditTimestamp = () => {
@@ -70,7 +70,7 @@ const PredOCEForm = (props) => {
 		let xmldoc = parser.parseFromString(xmldataDef, 'text/xml');
 		PreevaluatePersonName = xmldoc.getElementsByTagName('Jmeno')[0].childNodes[0].nodeValue;
 		PreevaluatePersonName += ' ' + xmldoc.getElementsByTagName('Prijmeni')[0].childNodes[0].nodeValue;
-		props.getName(PreevaluatePersonName);
+
 		RiskListFill(xmldoc);
 	};
 	//onClick metoda
@@ -88,12 +88,10 @@ const PredOCEForm = (props) => {
 	const ChangeAction = (event) => {
 		getaction(event.target.value);
 	};
+
 	const SubmitButtonClickEvent = () => {
 		EditTimestamp();
-		//console.log(timestamp + '\n\n' + action + '\n\n' + dataXML);
-		getinfoMessage(timestamp + ' - ' + timestampPlOne);
-		//ConvertXML();
-		//props.onShowRisk();
+		ConvertXML();
 	};
 
 	return (
@@ -116,15 +114,15 @@ const PredOCEForm = (props) => {
 				</div>
 				<div className="inputContainer lft">
 					<select className="textboxShow" name="scenario" id="scenario" onChange={ChangeAction}>
-						<option value="null"></option>
-						<option value="OK">Předocenění - OK </option>
-						<option value="OKv">Předocenění - OK s výlukou </option>
-						<option value="NOK2">Předocenění - NOK 2 </option>
-						<option value="NOK8">Předocenění - NOK 8 </option>
+						<option value="0"></option>
+						<option value="1">Předocenění - OK </option>
+						<option value="2">Předocenění - OK s výlukou </option>
+						<option value="21">Předocenění - NOK 2 </option>
+						<option value="22">Předocenění - NOK 8 </option>
 					</select>
 				</div>
-				<div className="infoPar lft">
-					<p>{infoMessage}</p>
+				<div className="infoPar lft hide">
+					<p>{infoMessage}}</p>
 				</div>
 			</div>
 			<div className="line"></div>
