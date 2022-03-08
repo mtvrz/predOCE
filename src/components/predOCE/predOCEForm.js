@@ -5,15 +5,16 @@ const PredOCEForm = (props) => {
 	let PreevaluatePersonName = '';
 	let xmldataDef =
 		'<row><ROWID>1301</ROWID><Smlouva><IDContract>302995</IDContract><IDContractFull>0121000003732432</IDContractFull><DatumUzavreni>2022-02-02+01:00</DatumUzavreni><DatumPocatku>2022-02-10+01:00</DatumPocatku><Produkt>10560</Produkt><PojistnaDoba>37</PojistnaDoba><Frekvence>3</Frekvence><AgeSpravy>632</AgeSpravy><AgeSjednani>632</AgeSjednani><Ziskatel>8670</Ziskatel><ZiskatelJmeno>.Allrisk,a.s.</ZiskatelJmeno><ZiskatelMail>mail76@IDD.cz</ZiskatelMail><Dat_Vlozeni_KDP>2022-02-02T13:05:00.425+01:00</Dat_Vlozeni_KDP></Smlouva><Pojisteny><Index>1</Index><Jmeno>Josef</Jmeno><Prijmeni>Zamítnutý</Prijmeni><RC>8901011010</RC><Povolani>aranžér</Povolani><VstupniVek>34</VstupniVek><Zadost_o_LP>false</Zadost_o_LP></Pojisteny><Rizika><Riziko><TypRizika>ZP</TypRizika><VerzeRizika>Z5P</VerzeRizika><TypPlneni>PC</TypPlneni><PC>20000.0</PC><PCMax>500.0</PCMax><O_VEK>71</O_VEK></Riziko><Riziko><TypRizika>ZP</TypRizika><VerzeRizika>Z5Z</VerzeRizika><TypPlneni>PCdecr</TypPlneni><PC>2500000.0</PC><PCMax>500.0</PCMax><O_VEK>71</O_VEK></Riziko><Riziko><TypRizika>ZP</TypRizika><VerzeRizika>ID3N</VerzeRizika><TypPlneni>PC</TypPlneni><PC>500000.0</PC><PCMax>500.0</PCMax><O_VEK>65</O_VEK></Riziko><Riziko><TypRizika>ZP</TypRizika><VerzeRizika>ID1N</VerzeRizika><TypPlneni>PCdecr</TypPlneni><PC>1800000.0</PC><PCMax>500.0</PCMax><O_VEK>65</O_VEK></Riziko><Riziko><TypRizika>UP</TypRizika><VerzeRizika>DOU8</VerzeRizika><TypPlneni>PC</TypPlneni><PC>500.0</PC><PCMax>500.0</PCMax><O_VEK>71</O_VEK></Riziko><Riziko><TypRizika>ZDP</TypRizika><VerzeRizika>DON29Z</VerzeRizika><TypPlneni>PC</TypPlneni><PC>300.0</PC><PCMax>500.0</PCMax><O_VEK>65</O_VEK></Riziko><Riziko><TypRizika>ZDP</TypRizika><VerzeRizika>DOHP</VerzeRizika><TypPlneni>PC</TypPlneni><PC>500.0</PC><PCMax>500.0</PCMax><O_VEK>71</O_VEK></Riziko></Rizika></row>';
-	let timestamp;
-	let timestampPlOne;
+	let timestamp, timestampPlOne;
+	let rowid;
+	let obj = [];
 	const [dataXML, getdataXML] = useState();
 	const [action, getaction] = useState();
 	const [infoMessage, getinfoMessage] = useState();
+
 	const RiskListFill = (xml) => {
 		let i = true;
 		let x = 1;
-		let obj = [];
 		while (i === true) {
 			try {
 				obj[x] = {
@@ -32,7 +33,7 @@ const PredOCEForm = (props) => {
 			}
 		}
 		console.log(obj);
-		props.getArray(obj);
+		//props.getArray(obj);
 	};
 	const EditTimestampPlOne = () => {
 		timestampPlOne = timestamp;
@@ -55,7 +56,7 @@ const PredOCEForm = (props) => {
 			hour = '0' + hour;
 		}
 		timestampPlOne = timestampPlOne.substr(0, 11) + hour + ':' + min + timestampPlOne.substr(16);
-		console.log(min, hour);
+		console.log(min, hour, timestampPlOne);
 	};
 	const EditTimestamp = () => {
 		try {
@@ -70,12 +71,13 @@ const PredOCEForm = (props) => {
 		let xmldoc = parser.parseFromString(xmldataDef, 'text/xml');
 		PreevaluatePersonName = xmldoc.getElementsByTagName('Jmeno')[0].childNodes[0].nodeValue;
 		PreevaluatePersonName += ' ' + xmldoc.getElementsByTagName('Prijmeni')[0].childNodes[0].nodeValue;
-
+		rowid = xmldoc.getElementsByTagName('ROWID')[0].childNodes[0].nodeValue;
 		RiskListFill(xmldoc);
 	};
 	//onClick metoda
 	const ChangeTimestamp = (event) => {
 		timestamp = event.target.value;
+		EditTimestamp();
 	};
 	//onClick metoda
 	const ChangeDataXML = (event) => {
@@ -90,8 +92,9 @@ const PredOCEForm = (props) => {
 	};
 
 	const SubmitButtonClickEvent = () => {
-		EditTimestamp();
 		ConvertXML();
+		console.log(timestamp, timestampPlOne);
+		//	props.onTakeAction(PreevaluatePersonName, action, obj, timestamp, timestampPlOne, rowid);
 	};
 
 	return (
@@ -122,7 +125,7 @@ const PredOCEForm = (props) => {
 					</select>
 				</div>
 				<div className="infoPar lft hide">
-					<p>{infoMessage}}</p>
+					<p>{infoMessage}</p>
 				</div>
 			</div>
 			<div className="line"></div>

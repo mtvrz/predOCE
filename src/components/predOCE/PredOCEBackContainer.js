@@ -32,19 +32,26 @@ const PredOCEBackContainer = () => {
 		getisScriptHidden();
 	};
 
-	const Switcher = (name, actionID, xmlData, time, timePlO) => {
+	const Switcher = (name, actionID, xmlData, time, timePlO, rowID) => {
 		getNamePreevaluatePerson(name);
 		switch (actionID) {
 			case '1': {
+				getScriptTab();
 				break;
 			}
 			case '2': {
+				getRiskArray(xmlData);
+				getRiskTab();
+				console.log(rowID, name, actionID, time, timePlO);
+				console.log(xmlData);
 				break;
 			}
 			case '21': {
+				getScriptTab();
 				break;
 			}
 			case '22': {
+				getScriptTab();
 				break;
 			}
 		}
