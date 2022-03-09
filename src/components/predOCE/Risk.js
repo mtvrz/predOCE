@@ -66,7 +66,7 @@ const Risk = (props) => {
 			}
 		}
 
-		return risk + riskScript_by_SELECT + '</Riziko>\n';
+		return risk + riskScript_by_SELECT + '</Riziko>';
 	};
 	return (
 		<div className="risk-container-main">

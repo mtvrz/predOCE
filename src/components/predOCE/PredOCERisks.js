@@ -3,15 +3,19 @@ import './PredOCERisks.css';
 import Risk from './Risk';
 
 const PredOCERisks = (props) => {
+	let x = 0;
 	const personName = props.PersonName;
 	const riskField = props.Array;
-	const [FINAL_SCRIPTS_ARRAY, get_FINAL_SCRIPTS_ARRAY] = useState('');
+	//const [FINAL_SCRIPTS_ARRAY, get_FINAL_SCRIPTS_ARRAY] = useState('');
 
 	const ReturnScript = (script) => {
-		get_FINAL_SCRIPTS_ARRAY(FINAL_SCRIPTS_ARRAY + script);
+		//get_FINAL_SCRIPTS_ARRAY(FINAL_SCRIPTS_ARRAY + script);
+		props.Object.XML_Script[x] = script;
+		x++;
 	};
 	const ShowScript = () => {
-		console.log(FINAL_SCRIPTS_ARRAY);
+		//console.log(FINAL_SCRIPTS_ARRAY);
+		console.log(props.Object);
 		props.onShowScript();
 	};
 	return (

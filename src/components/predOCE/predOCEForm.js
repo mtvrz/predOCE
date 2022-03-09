@@ -5,13 +5,15 @@ const PredOCEForm = (props) => {
 	let PreevaluatePersonName = '';
 	let xmldataDef =
 		'<row><ROWID>1301</ROWID><Smlouva><IDContract>302995</IDContract><IDContractFull>0121000003732432</IDContractFull><DatumUzavreni>2022-02-02+01:00</DatumUzavreni><DatumPocatku>2022-02-10+01:00</DatumPocatku><Produkt>10560</Produkt><PojistnaDoba>37</PojistnaDoba><Frekvence>3</Frekvence><AgeSpravy>632</AgeSpravy><AgeSjednani>632</AgeSjednani><Ziskatel>8670</Ziskatel><ZiskatelJmeno>.Allrisk,a.s.</ZiskatelJmeno><ZiskatelMail>mail76@IDD.cz</ZiskatelMail><Dat_Vlozeni_KDP>2022-02-02T13:05:00.425+01:00</Dat_Vlozeni_KDP></Smlouva><Pojisteny><Index>1</Index><Jmeno>Josef</Jmeno><Prijmeni>Zamítnutý</Prijmeni><RC>8901011010</RC><Povolani>aranžér</Povolani><VstupniVek>34</VstupniVek><Zadost_o_LP>false</Zadost_o_LP></Pojisteny><Rizika><Riziko><TypRizika>ZP</TypRizika><VerzeRizika>Z5P</VerzeRizika><TypPlneni>PC</TypPlneni><PC>20000.0</PC><PCMax>500.0</PCMax><O_VEK>71</O_VEK></Riziko><Riziko><TypRizika>ZP</TypRizika><VerzeRizika>Z5Z</VerzeRizika><TypPlneni>PCdecr</TypPlneni><PC>2500000.0</PC><PCMax>500.0</PCMax><O_VEK>71</O_VEK></Riziko><Riziko><TypRizika>ZP</TypRizika><VerzeRizika>ID3N</VerzeRizika><TypPlneni>PC</TypPlneni><PC>500000.0</PC><PCMax>500.0</PCMax><O_VEK>65</O_VEK></Riziko><Riziko><TypRizika>ZP</TypRizika><VerzeRizika>ID1N</VerzeRizika><TypPlneni>PCdecr</TypPlneni><PC>1800000.0</PC><PCMax>500.0</PCMax><O_VEK>65</O_VEK></Riziko><Riziko><TypRizika>UP</TypRizika><VerzeRizika>DOU8</VerzeRizika><TypPlneni>PC</TypPlneni><PC>500.0</PC><PCMax>500.0</PCMax><O_VEK>71</O_VEK></Riziko><Riziko><TypRizika>ZDP</TypRizika><VerzeRizika>DON29Z</VerzeRizika><TypPlneni>PC</TypPlneni><PC>300.0</PC><PCMax>500.0</PCMax><O_VEK>65</O_VEK></Riziko><Riziko><TypRizika>ZDP</TypRizika><VerzeRizika>DOHP</VerzeRizika><TypPlneni>PC</TypPlneni><PC>500.0</PC><PCMax>500.0</PCMax><O_VEK>71</O_VEK></Riziko></Rizika></row>';
-	let timestamp, timestampPlOne;
+	let timestamp = '',
+		timestampPlOne = '';
 	let rowid;
 	let obj = [];
 	const [dataXML, getdataXML] = useState();
-	const [action, getaction] = useState();
+	const [action, getaction] = useState('0');
 	const [infoMessage, getinfoMessage] = useState();
-
+	const [timeset, gettimeset] = useState('');
+	const [timeONEset, gettimeONEset] = useState();
 	const RiskListFill = (xml) => {
 		let i = true;
 		let x = 1;
@@ -32,7 +34,7 @@ const PredOCEForm = (props) => {
 				i = false;
 			}
 		}
-		console.log(obj);
+		//console.log(obj);
 		//props.getArray(obj);
 	};
 	const EditTimestampPlOne = () => {
@@ -56,10 +58,12 @@ const PredOCEForm = (props) => {
 			hour = '0' + hour;
 		}
 		timestampPlOne = timestampPlOne.substr(0, 11) + hour + ':' + min + timestampPlOne.substr(16);
-		console.log(min, hour, timestampPlOne);
+		//console.log(min, hour, timestampPlOne);
 	};
 	const EditTimestamp = () => {
 		try {
+			timestamp = timeset;
+			//console.log(timestamp, timeset);
 			timestamp = timestamp.replace(' ', 'T');
 			EditTimestampPlOne();
 		} catch (error) {
@@ -76,8 +80,7 @@ const PredOCEForm = (props) => {
 	};
 	//onClick metoda
 	const ChangeTimestamp = (event) => {
-		timestamp = event.target.value;
-		EditTimestamp();
+		gettimeset(event.target.value);
 	};
 	//onClick metoda
 	const ChangeDataXML = (event) => {
@@ -93,8 +96,13 @@ const PredOCEForm = (props) => {
 
 	const SubmitButtonClickEvent = () => {
 		ConvertXML();
-		console.log(timestamp, timestampPlOne);
-		//	props.onTakeAction(PreevaluatePersonName, action, obj, timestamp, timestampPlOne, rowid);
+		//console.log(timestamp, timestampPlOne);
+		EditTimestamp();
+		//console.log(timestamp, timestampPlOne);
+		//console.log(action);
+		if (action != '0') {
+			props.onTakeAction(PreevaluatePersonName, action, obj, timestamp, timestampPlOne, rowid);
+		} else getinfoMessage('Není zadaný scénář');
 	};
 
 	return (
@@ -113,7 +121,7 @@ const PredOCEForm = (props) => {
 					<textarea className="textboxShow" type="text" id="fdata" name="fdata" onChange={ChangeDataXML} />
 				</div>
 				<div className="inputContainer lft">
-					<input className="textboxShow" type="text" id="date" name="date" onChange={ChangeTimestamp} />
+					<input className="textboxShow" type="text" id="date" name="date" onChange={ChangeTimestamp} value={timeset} />
 				</div>
 				<div className="inputContainer lft">
 					<select className="textboxShow" name="scenario" id="scenario" onChange={ChangeAction}>
@@ -124,7 +132,7 @@ const PredOCEForm = (props) => {
 						<option value="22">Předocenění - NOK 8 </option>
 					</select>
 				</div>
-				<div className="infoPar lft hide">
+				<div className="infoPar lft ">
 					<p>{infoMessage}</p>
 				</div>
 			</div>

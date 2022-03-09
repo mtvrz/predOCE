@@ -13,6 +13,7 @@ const PredOCEBackContainer = () => {
 	const [isScriptHidden, getisScriptHidden] = useState('hide');
 	const [NamePreevaluatePerson, getNamePreevaluatePerson] = useState();
 	const [riskField, getriskField] = useState([]);
+	const [dataObject, getdataObject] = useState();
 	const getRiskArray = (array) => {
 		getriskField(array);
 	};
@@ -33,6 +34,15 @@ const PredOCEBackContainer = () => {
 	};
 
 	const Switcher = (name, actionID, xmlData, time, timePlO, rowID) => {
+		getdataObject({
+			ID: rowID,
+			ID_action: actionID,
+			Jmeno: name,
+			Time: time,
+			TimePO: timePlO,
+			XML: xmlData,
+			XML_Script: [],
+		});
 		getNamePreevaluatePerson(name);
 		switch (actionID) {
 			case '1': {
@@ -42,8 +52,9 @@ const PredOCEBackContainer = () => {
 			case '2': {
 				getRiskArray(xmlData);
 				getRiskTab();
-				console.log(rowID, name, actionID, time, timePlO);
-				console.log(xmlData);
+				// console.log(rowID, name, actionID, time, timePlO);
+				// console.log(xmlData);
+				//console.log(dataObject);
 				break;
 			}
 			case '21': {
@@ -62,17 +73,13 @@ const PredOCEBackContainer = () => {
 			<h2 className="headNameShowPr">{title}</h2>
 			<Card className={'basicBackPr light ' + isFormHidden}>
 				<div className="basicBackFlexCoverPr">
-					<PredOCEForm
-						onTakeAction={Switcher}
-						onShowRisk={getRiskTab}
-						onSpeedShowScript={getScriptTab}
-						getArray={getRiskArray}
-					/>
+					<PredOCEForm onTakeAction={Switcher} />
 				</div>
 			</Card>
 			<Card className={'basicBackPr light ' + isRiskHidden}>
 				<div className="basicBackFlexCoverPr">
 					<PredOCERisks
+						Object={dataObject}
 						PersonName={NamePreevaluatePerson}
 						onShowForm={getFormTab}
 						onShowScript={getScriptTab}
@@ -82,7 +89,7 @@ const PredOCEBackContainer = () => {
 			</Card>
 			<Card className={'basicBackPr light ' + isScriptHidden}>
 				<div className="basicBackFlexCoverPr">
-					<PredOCEScript onShowForm={getFormTab} />
+					<PredOCEScript Object={dataObject} onShowForm={getFormTab} />
 				</div>
 			</Card>
 		</div>

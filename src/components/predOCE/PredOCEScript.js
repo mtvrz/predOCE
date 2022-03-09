@@ -1,6 +1,10 @@
 import './PredOCEScript.css';
 
 const PredOCEScript = (props) => {
+	const sb = () => {
+		console.log(props.Object);
+	};
+
 	return (
 		<div className="containerScript">
 			<div className="Scriptflex">
@@ -11,7 +15,7 @@ const PredOCEScript = (props) => {
 				<button className="btScriptsubmit" disabled>
 					Konec
 				</button>
-				<button className="btScriptsubmit" onClick={props.onShowForm}>
+				<button className="btScriptsubmit" onClick={sb}>
 					Předocenit nový OP
 				</button>
 			</div>
