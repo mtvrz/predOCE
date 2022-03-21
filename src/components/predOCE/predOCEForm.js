@@ -95,6 +95,7 @@ const PredOCEForm = (props) => {
 	};
 
 	const SubmitButtonClickEvent = () => {
+		console.clear();
 		ConvertXML();
 		//console.log(timestamp, timestampPlOne);
 		EditTimestamp();

@@ -16,6 +16,7 @@ const PredOCERisks = (props) => {
 	const ShowScript = () => {
 		//console.log(FINAL_SCRIPTS_ARRAY);
 		console.log(props.Object);
+		props.onFillFinalScript();
 		props.onShowScript();
 	};
 	return (
