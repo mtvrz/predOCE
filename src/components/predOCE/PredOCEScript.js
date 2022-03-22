@@ -10,14 +10,7 @@ const PredOCEScript = (props) => {
 	return (
 		<div className="containerScript">
 			<div className="Scriptflex">
-				<textarea
-					disabled
-					className="Scripttextbox"
-					type="text"
-					id="fname"
-					name="fname"
-					value={script_final_version_1}
-				/>
+				<textarea disabled className="Scripttextbox" type="text" id="fname" name="fname" value={props.FinalScriptV1} />
 			</div>
 			<div className="line-cont-script"></div>
 			<div className="bottom-cont-script">

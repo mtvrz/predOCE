@@ -33,16 +33,15 @@ const PredOCEBackContainer = () => {
 		getisFormHidden('hide');
 		getisRiskHidden('hide');
 		getisScriptHidden();
-		console.log(final_ScriptV1);
+		//console.log(final_ScriptV1);
 	};
 	const FillRisks_into_object = () => {
-		let scr = '';
-		scr = dataObject.XML_Script[0];
+		let scr = dataObject.XML_Script.join('');
 		//console.log('script: ' + scr);
 		return scr;
 	};
 
-	const TakeAction_dependOnScenario = () => {
+	const TakeAction_dependOnScenarioTWO = () => {
 		script_update_part = `update OCE_INTEGRATION set REQUEST_STATUS='SENT', RESPONSE_DATA='`;
 		script_row_part = `<row><ROWID>${dataObject.ID}</ROWID><Rizika>`;
 		script_filled = FillRisks_into_object();
@@ -62,12 +61,16 @@ const PredOCEBackContainer = () => {
 			TimePO: timePlO,
 			XML: xmlData,
 			XML_Script: [],
+			XML_Script_v1_final: '',
 		});
 		getNamePreevaluatePerson(name);
 		switch (actionID) {
 			case '1': {
+				script_update_part = `update OCE_INTEGRATION set REQUEST_STATUS='SENT', RESPONSE_DATA='`;
+				script_row_part = `<row><ROWID>${rowID}</ROWID><Rizika/><Ostatni><StanoviskoCS>1</StanoviskoCS><ZaverecneRozhodnuti>MR - ok</ZaverecneRozhodnuti><DatPrevzetiLISA>${time}</DatPrevzetiLISA></Ostatni></row>`;
+				script_update_last_part = `', RESPONSE_STATUS='RECEIVED', RESPONSE_DATE='${timePlO}' where id=${rowID};`;
+				getfinal_ScriptV1(script_update_part + script_row_part + script_update_last_part);
 				getScriptTab();
-
 				break;
 			}
 			case '2': {
@@ -77,10 +80,18 @@ const PredOCEBackContainer = () => {
 				break;
 			}
 			case '21': {
+				script_update_part = `update OCE_INTEGRATION set REQUEST_STATUS='SENT', RESPONSE_DATA='`;
+				script_row_part = `<row><ROWID>${rowID}</ROWID><Rizika/><Ostatni><StanoviskoCS>2</StanoviskoCS><ZaverecneRozhodnuti>MR - odmítnuto</ZaverecneRozhodnuti><DatPrevzetiLISA>${time}</DatPrevzetiLISA></Ostatni></row>`;
+				script_update_last_part = `', RESPONSE_STATUS='RECEIVED', RESPONSE_DATE='${timePlO}' where id=${rowID};`;
+				getfinal_ScriptV1(script_update_part + script_row_part + script_update_last_part);
 				getScriptTab();
 				break;
 			}
 			case '22': {
+				script_update_part = `update OCE_INTEGRATION set REQUEST_STATUS='SENT', RESPONSE_DATA='`;
+				script_row_part = `<row><ROWID>${rowID}</ROWID><Rizika/><Ostatni><StanoviskoCS>8</StanoviskoCS><ZaverecneRozhodnuti>nelze predocenit viz. poznámka výše</ZaverecneRozhodnuti><DatPrevzetiLISA>${time}</DatPrevzetiLISA></Ostatni></row>`;
+				script_update_last_part = `', RESPONSE_STATUS='RECEIVED', RESPONSE_DATE='${timePlO}' where id=${rowID};`;
+				getfinal_ScriptV1(script_update_part + script_row_part + script_update_last_part);
 				getScriptTab();
 				break;
 			}
@@ -102,7 +113,7 @@ const PredOCEBackContainer = () => {
 						PersonName={NamePreevaluatePerson}
 						onShowForm={getFormTab}
 						onShowScript={getScriptTab}
-						onFillFinalScript={TakeAction_dependOnScenario}
+						onFillFinalScript={TakeAction_dependOnScenarioTWO}
 						Array={riskField}
 					/>
 				</div>

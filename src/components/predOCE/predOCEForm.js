@@ -30,7 +30,7 @@ const PredOCEForm = (props) => {
 				};
 				x++;
 			} catch (error) {
-				console.warn('Přetíženo');
+				console.warn('Risks_Loaded');
 				i = false;
 			}
 		}
