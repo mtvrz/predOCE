@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import { useState } from 'react';
 import './PredOCEBackContainer.css';
 //import DashItem from '../Dashboard/DashItem';
 import Card from '../UI/Card';
@@ -93,6 +93,9 @@ const PredOCEBackContainer = () => {
 				script_update_last_part = `', RESPONSE_STATUS='RECEIVED', RESPONSE_DATE='${timePlO}' where id=${rowID};`;
 				getfinal_ScriptV1(script_update_part + script_row_part + script_update_last_part);
 				getScriptTab();
+				break;
+			}
+			default: {
 				break;
 			}
 		}

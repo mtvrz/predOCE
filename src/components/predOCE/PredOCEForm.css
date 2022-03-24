@@ -22,6 +22,10 @@
 	border: none;
 	transition: 0.2s;
 }
+.errorS {
+	border-bottom: solid;
+	border-color: rgb(255, 0, 0);
+}
 .flex {
 	display: flex;
 	flex-wrap: wrap;

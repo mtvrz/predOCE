@@ -52,3 +52,16 @@
 	cursor: pointer;
 	background-color: rgba(211, 133, 16, 0.993);
 }
+.btbackSC {
+	width: auto;
+	padding: 10px;
+	height: 60px;
+	background: none;
+	border: none;
+	font-family: monospace;
+	font-size: x-large;
+	transition: 0.2s;
+}
+.btbackSC:hover {
+	cursor: pointer;
+}

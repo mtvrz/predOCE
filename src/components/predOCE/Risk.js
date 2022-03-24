@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import { useState } from 'react';
 import './Risk.css';
 
 const Risk = (props) => {
@@ -6,7 +6,7 @@ const Risk = (props) => {
 	const typrizika = props.typrizika;
 	const pc = props.pc;
 	const uvek = props.uvek;
-	const prirazka = props.prirazka;
+	//const prirazka = props.prirazka;
 	const typplneni = props.typplneni;
 	const [isSelectDisabled, setIsSelectDisabled] = useState(false);
 	const [isBtDisabled, setIsBtDisabled] = useState(false);
@@ -39,7 +39,7 @@ const Risk = (props) => {
 			'</TypRizika><VerzeRizika>' +
 			riziko +
 			'</VerzeRizika><TypPlneni>' +
-			pc +
+			typplneni +
 			'</TypPlneni>';
 
 		switch (selectChange) {
@@ -64,6 +64,9 @@ const Risk = (props) => {
 				riskScript_by_SELECT = '<VylukaDiagnozy/><PC_UPR>' + txtValue + '</PC_UPR>';
 				break;
 			}
+			default: {
+				break;
+			}
 		}
 
 		return risk + riskScript_by_SELECT + '</Riziko>';
@@ -71,11 +74,10 @@ const Risk = (props) => {
 	return (
 		<div className="risk-container-main">
 			<div className="risk-flex">
-				<div className="risk-item-container risk-ten-per risk-item-position">{riziko}</div>
+				<div className="risk-item-container risk-fift-per risk-item-position">{riziko}</div>
 				<div className="risk-item-container risk-five-per risk-item-position">{typrizika}</div>
-				<div className="risk-item-container risk-fift-per risk-item-position">{pc}</div>
+				<div className="risk-item-container risk-twen-per risk-item-position">{pc}</div>
 				<div className="risk-item-container risk-five-per risk-item-position">{uvek}</div>
-				<div className="risk-item-container risk-ten-per risk-item-position">{prirazka} %</div>
 				<div className="risk-item-container risk-twen-per risk-item-position-txt ">
 					<select
 						className="risk-textbox"

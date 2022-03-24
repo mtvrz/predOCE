@@ -1,4 +1,3 @@
-import react, { useState } from 'react';
 import './PredOCERisks.css';
 import Risk from './Risk';
 
@@ -33,7 +32,7 @@ const PredOCERisks = (props) => {
 						typrizika={x.typRizika}
 						pc={x.pc}
 						uvek={x.uvek}
-						prirazka={x.prirazka}
+						typplneni={x.typplneni}
 						risk_script_add={ReturnScript}
 					/>,
 				])}
