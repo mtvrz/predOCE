@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { cloneElement, useState } from 'react';
 import './PredOCEForm.css';
 
 const PredOCEForm = (props) => {
 	let PreevaluatePersonName = '';
 	let i = true;
-	let isValis = false;
+	let is_Case_Valid = [false, false, false];
 	let timestamp = '',
 		timestampPlOne = '';
 	let rowid;
@@ -17,7 +17,9 @@ const PredOCEForm = (props) => {
 	const [errONE, geterrONE] = useState('');
 	const [errTWO, geterrTWO] = useState('');
 	const [errTHREE, geterrTHREE] = useState('');
-	let errmess1, errmess2, errmess3;
+	let errmess1 = '',
+		errmess2 = '',
+		errmess3 = '';
 	const RiskListFill = (xml) => {
 		let x = 1;
 		while (i === true) {
@@ -61,18 +63,15 @@ const PredOCEForm = (props) => {
 			hour = '0' + hour;
 		}
 		timestampPlOne = timestampPlOne.substr(0, 11) + hour + ':' + min + timestampPlOne.substr(16);
+
 		//console.log(min, hour, timestampPlOne);
 	};
 	const EditTimestamp = () => {
-		try {
-			timestamp = timeset;
-			//timestamp = timeset;
-			//console.log(timestamp, timeset);
-			timestamp = timestamp.replace(' ', 'T');
-			EditTimestampPlOne();
-		} catch (error) {
-			console.error('InvalidTime');
-		}
+		timestamp = timeset;
+		//timestamp = timeset;
+		//console.log(timestamp, timeset);
+		timestamp = timestamp.replace(' ', 'T');
+		EditTimestampPlOne();
 	};
 	const ConvertXML = () => {
 		if (i === true) {
@@ -102,6 +101,15 @@ const PredOCEForm = (props) => {
 	};
 
 	const SubmitButtonClickEvent = () => {
+		Check_Field_One();
+		Check_Field_Two();
+		Check_Field_Three();
+
+		if (is_Case_Valid[0] === true && is_Case_Valid[1] === true && is_Case_Valid[2] === true) {
+			console.error('Cleared');
+			getisEn(true);
+			props.onTakeAction(PreevaluatePersonName, action, obj, timestamp, timestampPlOne, rowid);
+		}
 		// if (dataXML != null) {
 		// 	//console.clear();
 		// 	ConvertXML();
@@ -111,8 +119,29 @@ const PredOCEForm = (props) => {
 		// 	getisEn(true);
 		// 	props.onTakeAction(PreevaluatePersonName, action, obj, timestamp, timestampPlOne, rowid);
 		// } else getinfoMessage('Není zadaný scénář');
+		//console.error();
 	};
-
+	const Check_Field_One = () => {
+		if (dataXML != null && dataXML !== '') {
+			try {
+				ConvertXML();
+				ErrorDefine(1, false);
+			} catch (error) {
+				ErrorDefine(1, true);
+			}
+		} else ErrorDefine(1, true);
+	};
+	const Check_Field_Two = () => {
+		if (timeset !== '' && timeset.length === 23) {
+			EditTimestamp();
+			ErrorDefine(2, false);
+		} else ErrorDefine(2, true);
+	};
+	const Check_Field_Three = () => {
+		if (action !== '0') {
+			ErrorDefine(3, false);
+		} else ErrorDefine(3, true);
+	};
 	const ErrorDefine = (index, isError) => {
 		// dataXML != null && dataXML !== '' ? geterrONE('') : geterrONE('errorS');
 		// timeset !== '' ? geterrTWO('') : geterrTWO('errorS');
@@ -121,28 +150,34 @@ const PredOCEForm = (props) => {
 		if (index === 1 && isError === true) {
 			geterrONE('errorS');
 			errmess1 = 'XML datový soubor není validní';
+			is_Case_Valid[0] = false;
 		}
 		if (index === 1 && isError === false) {
 			geterrONE('');
 			errmess1 = '';
+			is_Case_Valid[0] = true;
 		}
 		if (index === 2 && isError === true) {
 			geterrTWO('errorS');
 			errmess2 = 'Časový údaj není ve validním stavu';
+			is_Case_Valid[1] = false;
 		}
 		if (index === 2 && isError === false) {
 			geterrTWO('');
 			errmess2 = '';
+			is_Case_Valid[1] = true;
 		}
-		if (index === 2 && isError === true) {
+		if (index === 3 && isError === true) {
 			geterrTHREE('errorS');
-			errmess3 = 'Časový údaj není ve validním stavu';
-		}
-		if (index === 2 && isError === false) {
-			geterrTHREE('');
 			errmess3 = 'Zvolte scénář';
+			is_Case_Valid[2] = false;
 		}
-		getinfoMessage(errmess1 + ' | ' + errmess2 + ' | ' + errmess3);
+		if (index === 3 && isError === false) {
+			geterrTHREE('');
+			errmess3 = '';
+			is_Case_Valid[2] = true;
+		}
+		getinfoMessage(errmess1 + '  ' + errmess2 + '  ' + errmess3);
 	};
 
 	return (
