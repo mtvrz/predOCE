@@ -1,4 +1,4 @@
-import { cloneElement, useState } from 'react';
+import { useState } from 'react';
 import './PredOCEForm.css';
 
 const PredOCEForm = (props) => {
@@ -11,15 +11,15 @@ const PredOCEForm = (props) => {
 	let obj = [];
 	const [dataXML, getdataXML] = useState();
 	const [action, getaction] = useState('0');
-	const [infoMessage, getinfoMessage] = useState('');
+	//const [infoMessage, getinfoMessage] = useState('');
 	const [timeset, gettimeset] = useState('');
 	const [isEn, getisEn] = useState(false);
 	const [errONE, geterrONE] = useState('');
 	const [errTWO, geterrTWO] = useState('');
 	const [errTHREE, geterrTHREE] = useState('');
-	let errmess1 = '',
-		errmess2 = '',
-		errmess3 = '';
+	// let errmess1 = '',
+	// 	errmess2 = '',
+	// 	errmess3 = '';
 	const RiskListFill = (xml) => {
 		let x = 1;
 		while (i === true) {
@@ -101,6 +101,7 @@ const PredOCEForm = (props) => {
 	};
 
 	const SubmitButtonClickEvent = () => {
+		obj = [];
 		Check_Field_One();
 		Check_Field_Two();
 		Check_Field_Three();
@@ -149,35 +150,35 @@ const PredOCEForm = (props) => {
 
 		if (index === 1 && isError === true) {
 			geterrONE('errorS');
-			errmess1 = 'XML datový soubor není validní';
+			//errmess1 = 'XML datový soubor není validní';
 			is_Case_Valid[0] = false;
 		}
 		if (index === 1 && isError === false) {
 			geterrONE('');
-			errmess1 = '';
+			//errmess1 = '';
 			is_Case_Valid[0] = true;
 		}
 		if (index === 2 && isError === true) {
 			geterrTWO('errorS');
-			errmess2 = 'Časový údaj není ve validním stavu';
+			//errmess2 = 'Časový údaj není ve validním stavu';
 			is_Case_Valid[1] = false;
 		}
 		if (index === 2 && isError === false) {
 			geterrTWO('');
-			errmess2 = '';
+			//errmess2 = '';
 			is_Case_Valid[1] = true;
 		}
 		if (index === 3 && isError === true) {
 			geterrTHREE('errorS');
-			errmess3 = 'Zvolte scénář';
+			//errmess3 = 'Zvolte scénář';
 			is_Case_Valid[2] = false;
 		}
 		if (index === 3 && isError === false) {
 			geterrTHREE('');
-			errmess3 = '';
+			//errmess3 = '';
 			is_Case_Valid[2] = true;
 		}
-		getinfoMessage(errmess1 + '  ' + errmess2 + '  ' + errmess3);
+		// getinfoMessage(errmess1 + '  ' + errmess2 + '  ' + errmess3);
 	};
 
 	return (
@@ -216,9 +217,6 @@ const PredOCEForm = (props) => {
 						<option value="21">Předocenění - NOK 2 </option>
 						<option value="22">Předocenění - NOK 8 </option>
 					</select>
-				</div>
-				<div className="infoPar lft ">
-					<p>{infoMessage}</p>
 				</div>
 			</div>
 			<div className="line"></div>

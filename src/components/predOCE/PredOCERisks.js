@@ -1,3 +1,4 @@
+//import { useState } from 'react';
 import './PredOCERisks.css';
 import Risk from './Risk';
 
@@ -5,6 +6,8 @@ const PredOCERisks = (props) => {
 	let x = 0;
 	const personName = props.PersonName;
 	const riskField = props.Array;
+	//const [riskField, getriskField] = useState(props.dataObject.XML);
+	//	console.log(riskField);
 	//const [FINAL_SCRIPTS_ARRAY, get_FINAL_SCRIPTS_ARRAY] = useState('');
 
 	const ReturnScript = (script) => {

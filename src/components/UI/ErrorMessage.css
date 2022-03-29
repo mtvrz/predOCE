@@ -1,0 +1,19 @@
+.errContainer {
+	position: absolute;
+	width: 250px;
+	height: 80px;
+	background-color: rgba(224, 199, 115, 0.76);
+	border-radius: 0.4em;
+	top: 20px;
+	left: 85%;
+}
+.errContainer p {
+	text-align: center;
+	font-size: medium;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 8px;
+}
+
+.hideMessage {
+	display: none;
+}

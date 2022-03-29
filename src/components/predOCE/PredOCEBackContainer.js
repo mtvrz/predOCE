@@ -5,6 +5,7 @@ import Card from '../UI/Card';
 import PredOCEForm from './predOCEForm';
 import PredOCERisks from './PredOCERisks';
 import PredOCEScript from './PredOCEScript';
+import ErrorMessage from '../UI/ErrorMessage';
 
 const PredOCEBackContainer = () => {
 	let script_update_part, script_row_part, script_filled, script_row_end_part, script_update_last_part;
@@ -16,9 +17,7 @@ const PredOCEBackContainer = () => {
 	const [NamePreevaluatePerson, getNamePreevaluatePerson] = useState();
 	const [riskField, getriskField] = useState([]);
 	const [dataObject, getdataObject] = useState();
-	const getRiskArray = (array) => {
-		getriskField(array);
-	};
+
 	const getRiskTab = () => {
 		getisFormHidden('hide');
 		getisRiskHidden();
@@ -74,7 +73,7 @@ const PredOCEBackContainer = () => {
 				break;
 			}
 			case '2': {
-				getRiskArray(xmlData);
+				getriskField(xmlData);
 				getRiskTab();
 
 				break;
@@ -103,6 +102,7 @@ const PredOCEBackContainer = () => {
 
 	return (
 		<div>
+			<ErrorMessage className="hideMessage" Message="Test"></ErrorMessage>
 			<h2 className="headNameShowPr">{title}</h2>
 			<Card className={'basicBackPr light ' + isFormHidden}>
 				<div className="basicBackFlexCoverPr">
