@@ -30,7 +30,8 @@
 	height: 60px;
 }
 .bt {
-	width: 10%;
+	width: auto;
+	padding: 10px;
 	height: 60px;
 	border-radius: 0.3em;
 	border: none;
@@ -39,12 +40,23 @@
 	font-size: x-large;
 	transition: 0.2s;
 }
+.btback {
+	width: auto;
+	padding: 10px;
+	height: 60px;
+	background: none;
+	border: none;
+	font-family: monospace;
+	font-size: x-large;
+	transition: 0.2s;
+}
 .bt:hover {
 	cursor: pointer;
 	background-color: rgba(207, 207, 207, 0.603);
 }
-
+.btback:hover {
+	cursor: pointer;
+}
 .flright {
-	margin-right: 20px;
 	float: right;
 }

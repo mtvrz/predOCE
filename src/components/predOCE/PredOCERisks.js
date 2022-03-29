@@ -1,31 +1,26 @@
+//import { useState } from 'react';
 import './PredOCERisks.css';
 import Risk from './Risk';
 
 const PredOCERisks = (props) => {
-	const personName = 'Test Testovací';
-	const riskField = [
-		{
-			riziko: 'Z5P',
-			typRizika: 'ZP',
-			pc: '20000.0',
-			uvek: '71',
-			prirazka: '50',
-		},
-		{
-			riziko: 'ID3N',
-			typRizika: 'ZP',
-			pc: '2000000.0',
-			uvek: '71',
-			prirazka: '300',
-		},
-		{
-			riziko: 'DON29Z',
-			typRizika: 'ZDP',
-			pc: '300.0',
-			uvek: '71',
-			prirazka: '0',
-		},
-	];
+	let x = 0;
+	const personName = props.PersonName;
+	const riskField = props.Array;
+	//const [riskField, getriskField] = useState(props.dataObject.XML);
+	//	console.log(riskField);
+	//const [FINAL_SCRIPTS_ARRAY, get_FINAL_SCRIPTS_ARRAY] = useState('');
+
+	const ReturnScript = (script) => {
+		//get_FINAL_SCRIPTS_ARRAY(FINAL_SCRIPTS_ARRAY + script);
+		props.Object.XML_Script[x] = script;
+		x++;
+	};
+	const ShowScript = () => {
+		//console.log(FINAL_SCRIPTS_ARRAY);
+		console.log(props.Object);
+		props.onFillFinalScript();
+		props.onShowScript();
+	};
 	return (
 		<div className="mainContainerRisk">
 			<div className="top-cont-risks">
@@ -34,13 +29,25 @@ const PredOCERisks = (props) => {
 			<div className="line-cont-risks"></div>
 			<div className="middle-cont-risks">
 				{riskField.map((x) => [
-					<Risk riziko={x.riziko} typrizika={x.typRizika} pc={x.pc} uvek={x.uvek} prirazka={x.prirazka} />,
+					<Risk
+						key={x.ID}
+						riziko={x.riziko}
+						typrizika={x.typRizika}
+						pc={x.pc}
+						uvek={x.uvek}
+						typplneni={x.typplneni}
+						risk_script_add={ReturnScript}
+					/>,
 				])}
 			</div>
 			<div className="line-cont-risks"></div>
 			<div className="bottom-cont-risks">
-				<button className="bt flright">Save</button>
-				<button className="bt flright">Discard</button>
+				<button className="bt flright" onClick={ShowScript}>
+					Generovat script
+				</button>
+				<button className="btback " onClick={props.onShowForm}>
+					Zpět
+				</button>
 			</div>
 		</div>
 	);
