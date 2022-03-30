@@ -39,10 +39,35 @@ const Risk = (props) => {
 		if (selectChange === 'Pri' || selectChange === 'UpV' || selectChange === 'UpC') {
 			isFieldsValid[0] = true;
 			try {
-				cont = parseInt(txtValue);
-				selectChange === 'Pri' && cont >= 5 && cont <= 500 ? (isFieldsValid[1] = true) : (isFieldsValid[1] = false);
-				selectChange === 'UpV' && cont >= 10 && cont <= 80 ? (isFieldsValid[1] = true) : (isFieldsValid[1] = false);
-				selectChange === 'UpC' && cont >= 10000 ? (isFieldsValid[1] = true) : (isFieldsValid[1] = false);
+				cont = Number(txtValue);
+				if (selectChange === 'Pri') {
+					if (cont >= 5 && cont <= 500) {
+						isFieldsValid[1] = true;
+					} else {
+						isFieldsValid[1] = false;
+					}
+				}
+				if (selectChange === 'UpV') {
+					if (cont >= 10 && cont <= 80) {
+						isFieldsValid[1] = true;
+					} else {
+						isFieldsValid[1] = false;
+					}
+				}
+				if (selectChange === 'UpC') {
+					if (cont >= 10000) {
+						isFieldsValid[1] = true;
+					} else {
+						isFieldsValid[1] = false;
+					}
+				}
+				// if (selectChange === 'Pri' && cont >= 5 && cont <= 500) isFieldsValid[1] = true;
+				// else if (selectChange === 'UpV' && cont >= 10 && cont <= 80) isFieldsValid[1] = true;
+				// else if (selectChange === 'UpC' && cont >= 10000) isFieldsValid[1] = true;
+				// else isFieldsValid[1] = false;
+				//selectChange === 'Pri' && cont >= 5 && cont <= 500 ? (isFieldsValid[1] = true) : (isFieldsValid[1] = false);
+				// selectChange === 'UpV' && cont >= 10 && cont <= 80 ? (isFieldsValid[1] = true) : (isFieldsValid[1] = false);
+				// selectChange === 'UpC' && cont >= 10000 ? (isFieldsValid[1] = true) : (isFieldsValid[1] = false);
 			} catch (error) {
 				isFieldsValid[1] = false;
 			}
