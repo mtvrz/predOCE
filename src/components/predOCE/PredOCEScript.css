@@ -19,7 +19,6 @@
 .containerScript {
 	position: relative;
 	width: 100%;
-	left: 4%;
 }
 .line-cont-script {
 	position: relative;
@@ -64,4 +63,14 @@
 }
 .btbackSC:hover {
 	cursor: pointer;
+}
+
+.TextField {
+	height: 30px;
+}
+.TextField p {
+	text-align: center;
+	font-size: x-large;
+	font-weight: bold;
+	color: red;
 }
