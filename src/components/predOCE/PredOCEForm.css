@@ -70,10 +70,6 @@
 	cursor: pointer;
 	background-color: rgba(207, 207, 207, 0.603);
 }
-.plus {
-	width: 5%;
-	margin-left: 10px;
-}
 .infoPar {
 	width: 100%;
 	font-size: smaller;
