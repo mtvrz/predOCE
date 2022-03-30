@@ -1,13 +1,17 @@
 import './components/UI/style.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import PredOCE from './components/predOCE/PredOCE';
+import { useState } from 'react';
 
 const App = () => {
-	let x = 2;
+	const [scenarioSet, getScenario] = useState(2);
 
-	if (x === 1) {
-		return <Dashboard />;
-	} else return <PredOCE />;
+	const SetScenario = (value) => {
+		getScenario(value);
+	};
+	if (scenarioSet === 1) return <Dashboard Set={SetScenario} />;
+	else if (scenarioSet === 2) return <PredOCE />;
+	else if (scenarioSet === 3) return <div></div>;
 };
 
 export default App;

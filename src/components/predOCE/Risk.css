@@ -4,14 +4,16 @@
 	height: 90px;
 	border-radius: 0.5em;
 	margin-bottom: 10px;
-	background-color: rgba(252, 252, 252, 0.603);
+	background-color: rgba(252, 252, 252, 0.644);
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.risk-container-main-used {
+	background-color: rgb(177, 177, 177);
 }
 .risk-flex {
 	display: flex;
 	flex-wrap: nowrap;
 }
-
 .risk-item-container {
 	position: relative;
 	height: 90px;
@@ -19,9 +21,17 @@
 	font-size: 20px;
 	font-family: monospace;
 	transition: 0.2s;
+
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
-
+.fs {
+	border-bottom-left-radius: 0.5em;
+	border-top-left-radius: 0.5em;
+}
+.ls {
+	border-bottom-right-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+}
 .risk-five-per {
 	width: 5%;
 }
@@ -74,4 +84,9 @@
 }
 .hide {
 	display: none;
+}
+
+.errorField {
+	border-bottom: solid;
+	border-color: rgb(255, 0, 0);
 }
