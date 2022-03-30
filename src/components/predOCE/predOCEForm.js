@@ -20,6 +20,18 @@ const PredOCEForm = (props) => {
 	// let errmess1 = '',
 	// 	errmess2 = '',
 	// 	errmess3 = '';
+
+	//----------------------------------
+	const PL = () => {
+		gettimeset('2022-02-02 13:15:16.343');
+		let vala =
+			'<?xml version="1.0" encoding="UTF-8" standalone="yes"?> <row>     <ROWID>1301</ROWID>     <Smlouva>         <IDContract>302995</IDContract>         <IDContractFull>0121000003732432</IDContractFull>         <DatumUzavreni>2022-02-02+01:00</DatumUzavreni>         <DatumPocatku>2022-02-10+01:00</DatumPocatku>         <Produkt>10560</Produkt>         <PojistnaDoba>37</PojistnaDoba>         <Frekvence>3</Frekvence>         <AgeSpravy>632</AgeSpravy>         <AgeSjednani>632</AgeSjednani>         <Ziskatel>8670</Ziskatel>         <ZiskatelJmeno>. Allrisk, a.s.</ZiskatelJmeno>         <ZiskatelMail>mail76@IDD.cz</ZiskatelMail>         <Dat_Vlozeni_KDP>2022-02-02T13:05:00.425+01:00</Dat_Vlozeni_KDP>     </Smlouva>     <Pojisteny>         <Index>1</Index>         <Jmeno>Josef</Jmeno>         <Prijmeni>Zamítnutý</Prijmeni>         <RC>8901011010</RC>         <Povolani>aranžér</Povolani>         <VstupniVek>34</VstupniVek>         <Zadost_o_LP>false</Zadost_o_LP>     </Pojisteny>     <Rizika>         <Riziko>             <TypRizika>ZP</TypRizika>             <VerzeRizika>Z5P</VerzeRizika>             <TypPlneni>PC</TypPlneni>             <PC>20000.0</PC>             <PCMax>500.0</PCMax>             <O_VEK>71</O_VEK>         </Riziko>         <Riziko>             <TypRizika>ZP</TypRizika>             <VerzeRizika>Z5Z</VerzeRizika>             <TypPlneni>PCdecr</TypPlneni>             <PC>2500000.0</PC>             <PCMax>500.0</PCMax>             <O_VEK>71</O_VEK>         </Riziko>         <Riziko>             <TypRizika>ZP</TypRizika>             <VerzeRizika>ID3N</VerzeRizika>             <TypPlneni>PC</TypPlneni>             <PC>500000.0</PC>             <PCMax>500.0</PCMax>             <O_VEK>65</O_VEK>         </Riziko>         <Riziko>             <TypRizika>ZP</TypRizika>             <VerzeRizika>ID1N</VerzeRizika>             <TypPlneni>PCdecr</TypPlneni>             <PC>1800000.0</PC>             <PCMax>500.0</PCMax>             <O_VEK>65</O_VEK>         </Riziko>         <Riziko>             <TypRizika>UP</TypRizika>             <VerzeRizika>DOU8</VerzeRizika>             <TypPlneni>PC</TypPlneni>             <PC>500.0</PC>             <PCMax>500.0</PCMax>             <O_VEK>71</O_VEK>         </Riziko>         <Riziko>             <TypRizika>ZDP</TypRizika>             <VerzeRizika>DON29Z</VerzeRizika>             <TypPlneni>PC</TypPlneni>             <PC>300.0</PC>             <PCMax>500.0</PCMax>             <O_VEK>65</O_VEK>         </Riziko>         <Riziko>             <TypRizika>ZDP</TypRizika>             <VerzeRizika>DOHP</VerzeRizika>             <TypPlneni>PC</TypPlneni>             <PC>500.0</PC>             <PCMax>500.0</PCMax>             <O_VEK>71</O_VEK>         </Riziko>     </Rizika> </row> ';
+		vala = vala.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '');
+		vala = vala.replaceAll(' ', '');
+		getdataXML(vala);
+		// SubmitButtonClickEvent();
+	};
+	//----------------------------------
 	const RiskListFill = (xml) => {
 		let x = 1;
 		while (i === true) {
@@ -223,6 +235,9 @@ const PredOCEForm = (props) => {
 			<div className="btcontainer">
 				<button className="btsubmit" onClick={SubmitButtonClickEvent}>
 					Potvrdit
+				</button>
+				<button className="btsubmit plus" onClick={PL}>
+					+
 				</button>
 			</div>
 		</div>

@@ -6,30 +6,89 @@ const Risk = (props) => {
 	const typrizika = props.typrizika;
 	const pc = props.pc;
 	const uvek = props.uvek;
+	let isFieldsValid = [false, false];
+	let cont;
 	//const prirazka = props.prirazka;
 	const typplneni = props.typplneni;
+	const [used, getused] = useState('');
+	const [isError, getisError] = useState('');
 	const [isSelectDisabled, setIsSelectDisabled] = useState(false);
-	const [isBtDisabled, setIsBtDisabled] = useState(false);
+	const [isBtDisabled, setIsBtDisabled] = useState(true);
 	const [isTXTDisabled, setIsTXTDisabled] = useState(true);
 	const [selectChange, setSelectChange] = useState('null');
 	const [txtValue, setTXTValue] = useState('');
 	const SelectStateUpdate = (event) => {
 		setSelectChange(event.target.value);
-		if (event.target.value === 'null' || event.target.value === 'VyA' || event.target.value === 'VyC')
+		if (event.target.value === 'null' || event.target.value === 'VyA' || event.target.value === 'VyC') {
 			setIsTXTDisabled(true);
-		else setIsTXTDisabled(false);
+		} else setIsTXTDisabled(false);
+
+		event.target.value !== 'null' ? setIsBtDisabled(false) : setIsBtDisabled(true);
+		//event.target.value !== 'null' ? (isFieldsValid[0] = true) : (isFieldsValid[0] = false);
 		//console.clear();
 	};
 	const setTxt = (event) => {
 		setTXTValue(event.target.value);
 	};
-	const returnState = () => {
-		const script = TRANSFORM_TO_SCRIPT();
-		setIsSelectDisabled(true);
-		setIsTXTDisabled(true);
-		setIsBtDisabled(true);
 
-		props.risk_script_add(script);
+	const ValidateFields = () => {
+		if (selectChange === 'VyA' || selectChange === 'VyC') {
+			isFieldsValid[0] = true;
+			isFieldsValid[1] = true;
+		}
+		if (selectChange === 'Pri' || selectChange === 'UpV' || selectChange === 'UpC') {
+			isFieldsValid[0] = true;
+			try {
+				cont = Number(txtValue);
+				if (selectChange === 'Pri') {
+					if (cont >= 5 && cont <= 500) {
+						isFieldsValid[1] = true;
+					} else {
+						isFieldsValid[1] = false;
+					}
+				}
+				if (selectChange === 'UpV') {
+					if (cont >= 10 && cont <= 80) {
+						isFieldsValid[1] = true;
+					} else {
+						isFieldsValid[1] = false;
+					}
+				}
+				if (selectChange === 'UpC') {
+					if (cont >= 10000) {
+						isFieldsValid[1] = true;
+					} else {
+						isFieldsValid[1] = false;
+					}
+				}
+				// if (selectChange === 'Pri' && cont >= 5 && cont <= 500) isFieldsValid[1] = true;
+				// else if (selectChange === 'UpV' && cont >= 10 && cont <= 80) isFieldsValid[1] = true;
+				// else if (selectChange === 'UpC' && cont >= 10000) isFieldsValid[1] = true;
+				// else isFieldsValid[1] = false;
+				//selectChange === 'Pri' && cont >= 5 && cont <= 500 ? (isFieldsValid[1] = true) : (isFieldsValid[1] = false);
+				// selectChange === 'UpV' && cont >= 10 && cont <= 80 ? (isFieldsValid[1] = true) : (isFieldsValid[1] = false);
+				// selectChange === 'UpC' && cont >= 10000 ? (isFieldsValid[1] = true) : (isFieldsValid[1] = false);
+			} catch (error) {
+				isFieldsValid[1] = false;
+			}
+		}
+	};
+
+	const returnState = () => {
+		console.log(isFieldsValid);
+		props.generate();
+		ValidateFields();
+		if (isFieldsValid[0] === true && isFieldsValid[1] === true) {
+			getisError('');
+			getused('risk-container-main-used');
+			const script = TRANSFORM_TO_SCRIPT();
+			setIsSelectDisabled(true);
+			setIsTXTDisabled(true);
+			setIsBtDisabled(true);
+			props.risk_script_add(script);
+		} else {
+			getisError('errorField');
+		}
 	};
 	const TRANSFORM_TO_SCRIPT = () => {
 		let riskScript_by_SELECT;
@@ -72,9 +131,9 @@ const Risk = (props) => {
 		return risk + riskScript_by_SELECT + '</Riziko>';
 	};
 	return (
-		<div className="risk-container-main">
+		<div className={'risk-container-main ' + used}>
 			<div className="risk-flex">
-				<div className="risk-item-container risk-fift-per risk-item-position">{riziko}</div>
+				<div className="risk-item-container risk-fift-per risk-item-position fs">{riziko}</div>
 				<div className="risk-item-container risk-five-per risk-item-position">{typrizika}</div>
 				<div className="risk-item-container risk-twen-per risk-item-position">{pc}</div>
 				<div className="risk-item-container risk-five-per risk-item-position">{uvek}</div>
@@ -95,9 +154,9 @@ const Risk = (props) => {
 						<option value="UpC">Upravená PČ</option>
 					</select>
 				</div>
-				<div className="risk-item-container risk-twen-per risk-item-position-txt">
+				<div className="risk-item-container risk-twen-per risk-item-position-txt ">
 					<input
-						className="risk-textbox"
+						className={'risk-textbox ' + isError}
 						type="text"
 						id="frisk-change-val"
 						name="frisk-change-val"
@@ -106,7 +165,7 @@ const Risk = (props) => {
 						onChange={setTxt}
 					/>
 				</div>
-				<div className="risk-item-container risk-fift-per risk-item-position-txt">
+				<div className="risk-item-container risk-fift-per risk-item-position-txt ls">
 					<button className="btconfirm" onClick={returnState} disabled={isBtDisabled}>
 						Confirm
 					</button>

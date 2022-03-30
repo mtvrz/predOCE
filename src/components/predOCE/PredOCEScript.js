@@ -3,10 +3,15 @@ import './PredOCEScript.css';
 const PredOCEScript = (props) => {
 	const NewCase = () => {
 		//console.log(props.Object);
+		// props.FinalScriptV1.select();
+		// document.execCommand('copy');
 	};
 
 	return (
 		<div className="containerScript">
+			<div className="TextField">
+				<p>Zkopírováno do schránky</p>
+			</div>
 			<div className="Scriptflex">
 				<textarea disabled className="Scripttextbox" type="text" id="fname" name="fname" value={props.FinalScriptV1} />
 			</div>
@@ -15,7 +20,7 @@ const PredOCEScript = (props) => {
 				<button className="btScriptsubmit" disabled>
 					Konec
 				</button>
-				<button className="btScriptsubmit" onClick={NewCase} disabled>
+				<button className="btScriptsubmit" onClick={NewCase}>
 					Předocenit nový OP
 				</button>
 				<button className="btbackSC " onClick={props.onShowForm}>
