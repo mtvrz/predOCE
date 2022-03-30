@@ -8,8 +8,12 @@ const DashItem = (props) => {
 	if (props.icon === 'predoceneni') IconChoice = PredoceIcon;
 	else if (props.icon === 'AUW') IconChoice = AUWIcon;
 	else IconChoice = DevelopIcon;
+
+	const CLick = () => {
+		props.onClick();
+	};
 	return (
-		<Card className="itemContainer">
+		<Card className="itemContainer" onClick={CLick}>
 			<div className="itemView">
 				<div className="itemShowImage">
 					<img className="icon" alt={props.icon} src={IconChoice} />

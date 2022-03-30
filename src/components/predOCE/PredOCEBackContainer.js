@@ -49,6 +49,9 @@ const PredOCEBackContainer = () => {
 		getfinal_ScriptV1(
 			script_update_part + script_row_part + script_filled + script_row_end_part + script_update_last_part
 		);
+		navigator.clipboard.writeText(
+			script_update_part + script_row_part + script_filled + script_row_end_part + script_update_last_part
+		);
 	};
 
 	const Switcher = (name, actionID, xmlData, time, timePlO, rowID) => {
@@ -69,6 +72,7 @@ const PredOCEBackContainer = () => {
 				script_row_part = `<row><ROWID>${rowID}</ROWID><Rizika/><Ostatni><StanoviskoCS>1</StanoviskoCS><ZaverecneRozhodnuti>MR - ok</ZaverecneRozhodnuti><DatPrevzetiLISA>${time}</DatPrevzetiLISA></Ostatni></row>`;
 				script_update_last_part = `', RESPONSE_STATUS='RECEIVED', RESPONSE_DATE='${timePlO}' where id=${rowID};`;
 				getfinal_ScriptV1(script_update_part + script_row_part + script_update_last_part);
+				navigator.clipboard.writeText(script_update_part + script_row_part + script_update_last_part);
 				getScriptTab();
 				break;
 			}
@@ -83,6 +87,8 @@ const PredOCEBackContainer = () => {
 				script_row_part = `<row><ROWID>${rowID}</ROWID><Rizika/><Ostatni><StanoviskoCS>2</StanoviskoCS><ZaverecneRozhodnuti>MR - odmítnuto</ZaverecneRozhodnuti><DatPrevzetiLISA>${time}</DatPrevzetiLISA></Ostatni></row>`;
 				script_update_last_part = `', RESPONSE_STATUS='RECEIVED', RESPONSE_DATE='${timePlO}' where id=${rowID};`;
 				getfinal_ScriptV1(script_update_part + script_row_part + script_update_last_part);
+				navigator.clipboard.writeText(script_update_part + script_row_part + script_update_last_part);
+
 				getScriptTab();
 				break;
 			}
@@ -91,6 +97,8 @@ const PredOCEBackContainer = () => {
 				script_row_part = `<row><ROWID>${rowID}</ROWID><Rizika/><Ostatni><StanoviskoCS>8</StanoviskoCS><ZaverecneRozhodnuti>nelze predocenit viz. poznámka výše</ZaverecneRozhodnuti><DatPrevzetiLISA>${time}</DatPrevzetiLISA></Ostatni></row>`;
 				script_update_last_part = `', RESPONSE_STATUS='RECEIVED', RESPONSE_DATE='${timePlO}' where id=${rowID};`;
 				getfinal_ScriptV1(script_update_part + script_row_part + script_update_last_part);
+				navigator.clipboard.writeText(script_update_part + script_row_part + script_update_last_part);
+
 				getScriptTab();
 				break;
 			}

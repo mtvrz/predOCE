@@ -1,4 +1,4 @@
-//import { useState } from 'react';
+import { useState } from 'react';
 import './PredOCERisks.css';
 import Risk from './Risk';
 
@@ -6,9 +6,14 @@ const PredOCERisks = (props) => {
 	let x = 0;
 	const personName = props.PersonName;
 	const riskField = props.Array;
+	const [isGenerateBtDisablet, getisGenerateBtDisablet] = useState(true);
 	//const [riskField, getriskField] = useState(props.dataObject.XML);
 	//	console.log(riskField);
 	//const [FINAL_SCRIPTS_ARRAY, get_FINAL_SCRIPTS_ARRAY] = useState('');
+
+	const ValidateGenerating = () => {
+		getisGenerateBtDisablet(false);
+	};
 
 	const ReturnScript = (script) => {
 		//get_FINAL_SCRIPTS_ARRAY(FINAL_SCRIPTS_ARRAY + script);
@@ -37,12 +42,13 @@ const PredOCERisks = (props) => {
 						uvek={x.uvek}
 						typplneni={x.typplneni}
 						risk_script_add={ReturnScript}
+						generate={ValidateGenerating}
 					/>,
 				])}
 			</div>
 			<div className="line-cont-risks"></div>
 			<div className="bottom-cont-risks">
-				<button className="bt flright" onClick={ShowScript}>
+				<button className="bt flright" onClick={ShowScript} disabled={isGenerateBtDisablet}>
 					Generovat script
 				</button>
 				<button className="btback " onClick={props.onShowForm}>
