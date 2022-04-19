@@ -5,7 +5,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import { useState } from 'react';
 
 const App = () => {
-	const [scenarioSet, getScenario] = useState(1);
+	const [scenarioSet, getScenario] = useState(2);
 
 	const SetScenario = (value) => {
 		getScenario(value);

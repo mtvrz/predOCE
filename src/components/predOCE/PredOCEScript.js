@@ -17,12 +17,6 @@ const PredOCEScript = (props) => {
 			</div>
 			<div className="line-cont-script"></div>
 			<div className="bottom-cont-script">
-				<button className="btScriptsubmit" disabled>
-					Konec
-				</button>
-				<button className="btScriptsubmit" onClick={NewCase}>
-					Předocenit nový OP
-				</button>
 				<button className="btbackSC " onClick={props.onShowForm}>
 					Zpět
 				</button>
