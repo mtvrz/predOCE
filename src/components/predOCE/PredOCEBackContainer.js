@@ -5,10 +5,10 @@ import Card from '../UI/Card';
 import PredOCEForm from './predOCEForm';
 import PredOCERisks from './PredOCERisks';
 import PredOCEScript from './PredOCEScript';
-import ErrorMessage from '../UI/ErrorMessage';
 
 const PredOCEBackContainer = () => {
 	let script_update_part, script_row_part, script_filled, script_row_end_part, script_update_last_part;
+	let y = 0;
 	const title = 'Předběžné ocenění v2';
 	const [final_ScriptV1, getfinal_ScriptV1] = useState();
 	const [isFormHidden, getisFormHidden] = useState();
@@ -39,7 +39,10 @@ const PredOCEBackContainer = () => {
 		//console.log('script: ' + scr);
 		return scr;
 	};
-
+	const FillScript = (scriptik) => {
+		dataObject.XML_Script[y] = scriptik;
+		y += 1;
+	};
 	const TakeAction_dependOnScenarioTWO = () => {
 		script_update_part = `update OCE_INTEGRATION set REQUEST_STATUS='SENT', RESPONSE_DATA='`;
 		script_row_part = `<row><ROWID>${dataObject.ID}</ROWID><Rizika>`;
@@ -110,7 +113,6 @@ const PredOCEBackContainer = () => {
 
 	return (
 		<div>
-			<ErrorMessage className="hideMessage" Message="Test"></ErrorMessage>
 			<h2 className="headNameShowPr">{title}</h2>
 			<Card className={'basicBackPr light ' + isFormHidden}>
 				<div className="basicBackFlexCoverPr">
@@ -126,6 +128,7 @@ const PredOCEBackContainer = () => {
 						onShowScript={getScriptTab}
 						onFillFinalScript={TakeAction_dependOnScenarioTWO}
 						Array={riskField}
+						MVS={FillScript}
 					/>
 				</div>
 			</Card>

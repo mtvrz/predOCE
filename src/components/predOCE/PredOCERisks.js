@@ -17,8 +17,8 @@ const PredOCERisks = (props) => {
 
 	const ReturnScript = (script) => {
 		//get_FINAL_SCRIPTS_ARRAY(FINAL_SCRIPTS_ARRAY + script);
-		props.Object.XML_Script[x] = script;
-		x++;
+		props.MVS(script);
+		//x++;
 	};
 	const ShowScript = () => {
 		//console.log(FINAL_SCRIPTS_ARRAY);
