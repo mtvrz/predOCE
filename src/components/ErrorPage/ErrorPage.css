@@ -1,0 +1,69 @@
+.mainErrBack {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(48, 47, 47, 0.781);
+}
+
+.ErrContainerMain {
+	position: absolute;
+	background-color: rgb(202, 202, 202);
+	width: 54%;
+	height: 500px;
+	border-radius: 0.8em;
+	top: 15%;
+	left: 23%;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	transition: 0.2s;
+}
+.errPic {
+	position: relative;
+	width: 100%;
+	height: 350px;
+
+	display: flex;
+	flex-direction: column;
+}
+.errPicTop {
+	position: relative;
+	left: 40%;
+	top: 40px;
+	width: 20%;
+	height: 200px;
+
+	transition: 0.2s;
+}
+.errPicBott {
+	position: relative;
+
+	top: 50px;
+	left: 10%;
+	width: 80%;
+	height: 100px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: xx-large;
+	text-align: center;
+}
+.btConfirm {
+	position: relative;
+	width: 30%;
+	height: 15%;
+	top: 8%;
+	left: 35%;
+	font-size: large;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: 0.5em;
+	border: none;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	transition: 0.2s;
+}
+.btConfirm:hover {
+	background-color: orange;
+	cursor: pointer;
+}
+
+.exitModal {
+	display: none;
+}

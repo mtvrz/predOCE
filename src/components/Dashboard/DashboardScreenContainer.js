@@ -7,7 +7,7 @@ const BasicScreenContainer = (props) => {
 		props.SetVal(2);
 	};
 	const Give_Scenario_AUW = () => {
-		props.SetVal(3);
+		props.SetVal(4);
 	};
 	return (
 		<Card className="basicBack light">
