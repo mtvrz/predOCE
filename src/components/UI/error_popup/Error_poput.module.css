@@ -1,0 +1,41 @@
+.errContainer{
+    position: absolute;
+    top: 5%;
+    left:5%;
+    width: 90%;
+    height: 7%;
+    border-radius: 0.2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+.error{
+    background: #de3232;
+}
+.warn{
+    background: #d5732b;
+}
+.info{
+    background: rgba(46, 182, 19, 0.76);
+}
+.moveErr{
+    height: 0%;
+    width: 90%;
+}
+.moveErr p{
+    display: none;
+}
+
+@media only screen and (min-width: 700px) {
+    .errContainer{
+        left:77%;
+        width: 20%;
+        height: 7%;
+    }
+    .moveErr{
+        left:100%;
+        width: 0%;
+    }
+}

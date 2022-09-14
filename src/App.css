@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+.App {
+  position: absolute;
+  background: linear-gradient(to bottom, #2b2d42 90%, #41e2ba 108%);
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+@media only screen and (min-width: 700px) {
+}

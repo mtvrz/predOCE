@@ -1,0 +1,10 @@
+.txtbox{
+    background: white;
+    text-align: center;
+}
+.txtbox:disabled{
+    background: rgba(182, 179, 179, 0.29);
+}
+.rowError{
+    background: rgba(232, 106, 146, 0.37);
+}

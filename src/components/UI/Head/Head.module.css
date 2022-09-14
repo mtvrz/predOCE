@@ -1,0 +1,15 @@
+.Nadpis {
+  color: #f7f7f9;
+
+}
+.NadpisCont {
+  position: absolute;
+  top: 8%;
+  height: 10px;
+  width: 90%;
+  text-align: center;
+font-family: sans-serif;
+}
+.Nadpis sup {
+  color: #41E2BA;
+}

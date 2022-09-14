@@ -1,0 +1,146 @@
+
+table {
+
+    border-collapse: collapse;
+    background: #F7F7F9;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+table * {
+    position: relative;
+}
+
+table td,
+table th {
+    padding-left: 8px;
+}
+
+table thead tr {
+    height: 60px;
+    background: rgba(173, 173, 173, 0.42);
+    font-size: 16px;
+}
+
+table tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #e3f1d5;
+}
+
+table td,
+table th {
+    text-align: left;
+}
+
+table td.l,
+table th.l {
+    text-align: left;
+}
+
+table td.c,
+table th.c {
+    text-align: center;
+}
+
+table td.r,
+table th.r {
+    text-align: center;
+}
+
+table input, select {
+
+    position: relative;
+    width: 80%;
+    height: 30px;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: 0.1px solid gray;
+    font-size: small;
+    transition: 0.3s;
+
+
+}
+
+@media screen and (max-width: 35.5em) {
+    table {
+        display: block;
+    }
+
+    table > *,
+    table tr,
+    table td,
+    table th {
+        display: block;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tbody tr {
+        height: auto;
+        padding: 8px 0;
+    }
+
+    table tbody tr td {
+        padding-left: 45%;
+        margin-bottom: 12px;
+    }
+
+    table tbody tr td:last-child {
+        margin-bottom: 0;
+    }
+
+    table tbody tr td:before {
+        position: absolute;
+        font-weight: 700;
+        width: 40%;
+        left: 10px;
+        top: 0;
+    }
+}
+
+
+.buttCont {
+    position: relative;
+    background: #F7F7F9;
+    height: auto;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.genButton {
+    position: relative;
+    margin: 20px;
+    height: 40px;
+    width: 30%;
+    transition: 0.3s;
+    border: 1px solid #1a866c;
+    color: #1a866c;
+    background-color: #f7f7f9;
+    font-size: large;
+  float: right;
+    margin-right: 35%;
+
+}
+
+.genButton:hover {
+    cursor: pointer;
+    background-color: #41e2ba;
+    border-color: #41E2BA ;
+    color: black;
+}
+
+.genButton:disabled {
+    color: gray;
+    border-color: gray;
+    background-color: #f7f7f9;
+
+}
+
+.genButton:hover:disabled {
+    cursor: default;
+    background-color: #f7f7f9;
+}

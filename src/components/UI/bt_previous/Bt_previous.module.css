@@ -1,0 +1,36 @@
+.updatePage_Button {
+    position: relative;
+    height: 70px;
+    width: 100px;
+    margin: 20px;
+    margin-bottom: 0px;
+    border-radius: 0.2em;
+    border: none;
+    transition: 0.3s;
+    border-color: #2b2d42;
+    background-color: #f7f7f9;
+    font-size: large;
+
+}
+
+.riskPage{
+    height: 40px;
+}
+
+.bck_bt {
+    float: left;
+    font-size: medium;
+}
+
+.bck_bt:hover {
+    cursor: pointer;
+}
+
+.buttCont {
+    width: 90%;
+}
+.ico img{
+    width: 13px;
+    height: auto;
+    margin-right: 10px;
+}

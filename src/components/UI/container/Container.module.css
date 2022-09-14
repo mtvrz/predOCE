@@ -1,0 +1,67 @@
+.ContainerBody {
+  position: relative;
+  width: 90%;
+  height: 40%;
+  transition: 0.6s;
+  border-radius: 0.2em;
+  background-color: #f7f7f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.toolBar{
+  font-family: sans-serif;
+  position: absolute;
+  width: 33%;
+  height: 40px;
+  top: 10%;
+  display: flex;
+  justify-content: right;
+  align-items: start;
+  color: #f7f7f9;
+}
+.toolBar h6{
+  transition: 0.2s;
+}
+.toolBar h6:hover{
+  color: #41E2BA;
+  cursor: pointer;
+}
+.hidden{
+  display: none;
+}
+.test {
+  position: relative;
+  width: 20%;
+  height: 20%;
+  background-color: aquamarine;
+  margin-bottom: 40px;
+}
+/**/
+@media only screen and (min-width: 700px) {
+  .ContainerBody {
+    width: 50%;
+    height: 40%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .ContainerBody {
+    width: 33%;
+    height: 40%;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .ContainerBody {
+    width: 25%;
+    height: 40%;
+  }
+}
+
+.startScreen{
+  width: 10px;
+  height: 10px;
+}
+

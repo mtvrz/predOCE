@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+.textarea_input_update_page {
+    position: relative;
+    width: 90%;
+    height: 60%;
+    border-radius: 0.4em;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    color: #2b2d42;
+}
+
+.updatePage_Button {
+    height: 70px;
+    width: 20%;
+    margin: 20px;
+    margin-bottom: 0px;
+    border-radius: 0.2em;
+    border: none;
+    transition: 0.3s;
+    border-color: #2b2d42;
+    background-color: #f7f7f9;
+    font-size: large;
+}
+
+.end_bt {
+    float: right;
+    width: 25%;
+}
+
+.bck_bt {
+    float: left;
+}
+
+.updatePage_Button:hover {
+    cursor: pointer;
+    background-color: #41e2ba;
+    color: black;
+}
+
+.bck_bt:hover {
+    background-color: #f7f7f9;
+}
+
+.buttCont {
+    width: 90%;
+}

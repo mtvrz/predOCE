@@ -1,0 +1,37 @@
+.contTableBody {
+
+    position: relative;
+    width: 90%;
+    height: auto;
+    transition: 0.2s;
+    background-color: #f7f7f9;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.toolBar{
+
+    font-family: sans-serif;
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    top: 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: #F7F7F9;
+}
+.toolBar img{
+    height: 100%;
+    width: auto;
+}
+.flextable{
+    display: flex;
+    flex-direction: column;
+    align-items: center;;
+    justify-content: space-around;
+    height: 400px;
+}
