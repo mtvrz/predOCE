@@ -1,25 +1,13 @@
 {
   "files": {
-    "main.css": "/predOCE/static/css/main.1b8c4206.chunk.css",
-    "main.js": "/predOCE/static/js/main.01f58128.chunk.js",
-    "main.js.map": "/predOCE/static/js/main.01f58128.chunk.js.map",
-    "runtime-main.js": "/predOCE/static/js/runtime-main.74a63162.js",
-    "runtime-main.js.map": "/predOCE/static/js/runtime-main.74a63162.js.map",
-    "static/js/2.21217651.chunk.js": "/predOCE/static/js/2.21217651.chunk.js",
-    "static/js/2.21217651.chunk.js.map": "/predOCE/static/js/2.21217651.chunk.js.map",
+    "main.css": "/predOCE/static/css/main.5b8542eb.css",
+    "main.js": "/predOCE/static/js/main.9090a9ae.js",
     "index.html": "/predOCE/index.html",
-    "static/css/main.1b8c4206.chunk.css.map": "/predOCE/static/css/main.1b8c4206.chunk.css.map",
-    "static/js/2.21217651.chunk.js.LICENSE.txt": "/predOCE/static/js/2.21217651.chunk.js.LICENSE.txt",
-    "static/media/developIcon.c98de273.png": "/predOCE/static/media/developIcon.c98de273.png",
-    "static/media/errorIcon.05142e49.png": "/predOCE/static/media/errorIcon.05142e49.png",
-    "static/media/learnIcon.7a1ab985.png": "/predOCE/static/media/learnIcon.7a1ab985.png",
-    "static/media/predoceneniIcon.8cc979cb.png": "/predOCE/static/media/predoceneniIcon.8cc979cb.png",
-    "static/media/reloadIcon.fca1bc10.png": "/predOCE/static/media/reloadIcon.fca1bc10.png"
+    "main.5b8542eb.css.map": "/predOCE/static/css/main.5b8542eb.css.map",
+    "main.9090a9ae.js.map": "/predOCE/static/js/main.9090a9ae.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.74a63162.js",
-    "static/js/2.21217651.chunk.js",
-    "static/css/main.1b8c4206.chunk.css",
-    "static/js/main.01f58128.chunk.js"
+    "static/css/main.5b8542eb.css",
+    "static/js/main.9090a9ae.js"
   ]
 }
