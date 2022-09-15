@@ -17,6 +17,7 @@ export const request_to_object = (data) => {
     const rowID = xmldoc.getElementsByTagName('ROWID')[0].childNodes[0].nodeValue;
 
     while (i === true) {
+
         try {
             obj[x] = {
                 ID: x + 1,
@@ -27,6 +28,7 @@ export const request_to_object = (data) => {
                 uvek: xmldoc.getElementsByTagName('O_VEK')[x].childNodes[0].nodeValue,
                 prirazka: 0,
             };
+            debugger
             x++;
         } catch (error) {
             console.warn('Risks_Loaded');
@@ -45,11 +47,13 @@ export const request_to_object = (data) => {
 };
 
 export const request_date_process = (req_date) => {
-    let request_date_plus_oneMinute, minutes, hours
-    req_date = req_date.replace(' ', 'T');
-    minutes = parseInt(req_date[14] + req_date[15]);
-    hours = parseInt(req_date[11] + req_date[12]);
-    request_date_plus_oneMinute = req_date
+    let request_date_plus_oneMinute, minutes, hours, obj
+
+        req_date = req_date.replace(' ', 'T');
+        minutes = parseInt(req_date[14] + req_date[15]);
+        hours = parseInt(req_date[11] + req_date[12]);
+        request_date_plus_oneMinute = req_date
+
 
     minutes++;
     if (minutes === 60) {
@@ -67,10 +71,11 @@ export const request_date_process = (req_date) => {
         hours = '0' + hours;
     }
     request_date_plus_oneMinute = request_date_plus_oneMinute.substr(0, 11) + hours + ':' + minutes + request_date_plus_oneMinute.substr(16);
-    let obj = {
+     obj = {
         date_basic: req_date,
         date_plus: request_date_plus_oneMinute
     }
+
     //console.log(obj)
     return obj
 };

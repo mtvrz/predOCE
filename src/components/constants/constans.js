@@ -11,6 +11,10 @@ export const preevaluation_change_type_enum = [
     {id: 4, title: "upr_vek", value: "Upravený věk"},
     {id: 5, title: "upr_pc", value: "Upravená pojistná částka"},
 ]
+export const error_messages_enum = {
+    error_xml: "XML convert error",
+    error_time: "request_date error",
+}
 export const popUp_styles_enum = {
     error: 1,
     warning: 2,

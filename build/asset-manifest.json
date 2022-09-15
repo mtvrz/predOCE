@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/predOCE/static/css/main.5b8542eb.css",
+    "main.js": "/predOCE/static/js/main.9090a9ae.js",
+    "index.html": "/predOCE/index.html",
+    "main.5b8542eb.css.map": "/predOCE/static/css/main.5b8542eb.css.map",
+    "main.9090a9ae.js.map": "/predOCE/static/js/main.9090a9ae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b8542eb.css",
+    "static/js/main.9090a9ae.js"
+  ]
+}

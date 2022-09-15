@@ -12,13 +12,13 @@
     transition: 0.2s;
 }
 .error{
-    background: #de3232;
+    background: rgba(222, 50, 50, 0.78);
 }
 .warn{
     background: #d5732b;
 }
 .info{
-    background: rgba(46, 182, 19, 0.76);
+    background: rgba(65, 226, 186, 0.73);
 }
 .moveErr{
     height: 0%;
