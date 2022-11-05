@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/predOCE/static/css/main.827ab16b.css",
-    "main.js": "/predOCE/static/js/main.97ceaa21.js",
+    "main.css": "/predOCE/static/css/main.dd4214f5.css",
+    "main.js": "/predOCE/static/js/main.cb9c4e12.js",
     "index.html": "/predOCE/index.html",
-    "main.827ab16b.css.map": "/predOCE/static/css/main.827ab16b.css.map",
-    "main.97ceaa21.js.map": "/predOCE/static/js/main.97ceaa21.js.map"
+    "main.dd4214f5.css.map": "/predOCE/static/css/main.dd4214f5.css.map",
+    "main.cb9c4e12.js.map": "/predOCE/static/js/main.cb9c4e12.js.map"
   },
   "entrypoints": [
-    "static/css/main.827ab16b.css",
-    "static/js/main.97ceaa21.js"
+    "static/css/main.dd4214f5.css",
+    "static/js/main.cb9c4e12.js"
   ]
 }
